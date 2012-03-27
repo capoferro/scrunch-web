@@ -15,42 +15,44 @@ end
 Then /^I should see the results of that combat log in chart format$/ do
   @filename.should_not be_nil
   within('.entities.damage') do
-    within('.Ahri') do
+    within('.ahri') do
       page.should have_content 'Ahri'
       page.should have_content '2825'
-      page.should have_content 'MAX SKILL: MAX DAMAGE'
+      page.should have_content 'Slash: 193'
     end
 
-    within('.Forge_Guardian') do
+    within('.forge_guardian') do
       page.should have_content 'Forge Guardian'
       page.should have_content '3122'
-      page.should have_content 'MAX SKILL: MAX DAMAGE'
+      page.should have_content 'Maul: 156'
     end
 
-    within('.Ahri_T7-O1') do
+    within('.ahri_t7_o1') do
       page.should have_content 'Ahri:T7-O1'
       page.should have_content '859'
-      page.should have_content 'MAX SKILL: MAX DAMAGE'
+      page.should have_content 'Ranged Attack: 52'
     end
   end
 
-  within('#healing-table') do
-    within('.Ahri') do
+  within('.entities.healing') do
+    within('.ahri') do
       page.should have_content 'Ahri'
       page.should have_content '815'
-      page.should have_content 'MAX SKILL: MAX DAMAGE'
+      page.should have_content 'Revive Companion: 423'
     end
 
-    within('.Forge_Guardian') do
+    within('.forge_guardian') do
       page.should have_content 'Forge Guardian'
       page.should have_content '0'
-      page.should have_content 'MAX SKILL: MAX DAMAGE'
+      page.should_not have_content ':'
     end
 
-    within('.Ahri_T7-O1') do
+    within('.ahri_t7_o1') do
       page.should have_content 'Ahri:T7-O1'
       page.should have_content '0'
-      page.should have_content 'MAX SKILL: MAX DAMAGE'
+      within('.max') do
+        page.should_not have_content ':'
+      end
     end
   end
 end

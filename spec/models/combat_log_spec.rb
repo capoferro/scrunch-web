@@ -35,6 +35,7 @@ describe CombatLog::Cruncher do
       sources['@Ahri:T7-O1'].total_damage.should == 859
       sources['Forge Guardian'].total_damage.should == 3122
       sources['@Ahri'].total_healing.should == 815
+      sources['@Ahri'].max_damage.should == {skill: 'Slash', amount: 193}
     end
 
     it 'should not explode when reading a file with an invalid byte sequence' do
@@ -48,7 +49,7 @@ describe CombatLog::Cruncher do
       end
 
       it 'should take a line and parse it into source and effect result' do
-        described_class.parse(@damage_line).should == ["@Ahri", "ApplyEffect {836045448945477}: Damage {836045448945501}] (73 energy {836045448940874}) <73>"]
+        described_class.parse(@damage_line).should == ["@Ahri", "Force Leap", "ApplyEffect {836045448945477}: Damage {836045448945501}] (73 energy {836045448940874}) <73>"]
       end
     end
     describe 'a non-damage line' do

@@ -1,10 +1,10 @@
-%tr{class: "#{entity_row.name} entity_row"}
+%tr{class: "#{entity_row.name.gsub(/[\s\:]/, '').underscore} entity_row"}
   %td= entity_row.name
   - case type
   - when :damage
     %td= entity_row.total_damage
-    %td= entity_row.max_damage
+    %td.max= "#{entity_row.max_damage[:skill]}#{entity_row.max_damage.empty? ? '' : ': ' }#{entity_row.max_damage[:amount]}"
   - when :healing
     %td= entity_row.total_healing
-
+    %td.max= "#{entity_row.max_healing[:skill]}#{entity_row.max_healing.empty? ? '' : ': ' }#{entity_row.max_healing[:amount]}"
 

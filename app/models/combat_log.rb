@@ -29,9 +29,9 @@ class CombatLog < ActiveRecord::Base
         entities = {}
         File.open filename do |log|
           while line = log.gets
-            entity_name, result = parse line
+            entity_name, skill, result = parse line
             entities[entity_name] ||= Entity.new(name: entity_name)
-            entities[entity_name].add_effect_result parse_effect_result(result)
+            entities[entity_name].add_effect_result skill, parse_effect_result(result)
           end
         end
         entities
@@ -39,9 +39,10 @@ class CombatLog < ActiveRecord::Base
 
       # Public: Process an individual line and update entities accordingly
       def parse(line)
-        timestamp, entity_with_id, target, ability, result = line.split /\]\s\[/
+        timestamp, entity_with_id, target, skill_with_id, result = line.split /\]\s\[/
         entity_name, _ = entity_with_id.split /\s\{/
-        [entity_name, result]
+        skill, _ = skill_with_id.split /\s\{/
+        [entity_name, skill, result]
       rescue ArgumentError => e # Will trigger on the first split. Be
                                 # sure not to cause side effects
                                 # before this has a chance to trigger

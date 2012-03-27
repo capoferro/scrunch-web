@@ -1337,3 +1337,1220 @@ Migrating to AddMaxHealingToEntities (20120327064401)
   [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("combat_logs")[0m
   [1m[35m (0.0ms)[0m  PRAGMA index_list("entities")
   [1m[36m (0.4ms)[0m  [1mSELECT version FROM schema_migrations ORDER BY version[0m
+
+
+Started GET "/combat_logs/2" for 127.0.0.1 at 2012-03-26 23:46:48 -0700
+Processing by CombatLogsController#show as HTML
+  Parameters: {"id"=>"2"}
+Completed 500 Internal Server Error in 1ms
+
+ActiveRecord::StatementInvalid (Could not find table 'combat_logs'):
+  app/controllers/combat_logs_controller.rb:12:in `show'
+
+
+  Rendered /Users/jkiehl/.rbenv/versions/1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.1ms)
+  Rendered /Users/jkiehl/.rbenv/versions/1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/jkiehl/.rbenv/versions/1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (44.7ms)
+  [1m[36m (7.3ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (3.3ms)[0m  CREATE TABLE "combat_logs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "file_file_name" varchar(255), "file_content_type" varchar(255), "file_file_size" integer, "file_updated_at" datetime) 
+  [1m[36m (1.8ms)[0m  [1mCREATE TABLE "entities" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "total_damage" integer, "player" boolean, "total_healing" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "combat_log_id" integer, "max_damage" integer, "max_healing" integer) [0m
+  [1m[35m (1.8ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35m (1.7ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120327064401')
+  [1m[36m (2.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120325220927')[0m
+  [1m[35m (1.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120326023959')
+  [1m[36m (1.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120326025815')[0m
+  [1m[35m (1.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120326063036')
+  [1m[36m (1.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120326070606')[0m
+  [1m[35m (2.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120327063533')
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+
+
+Started GET "/combat_logs/2" for 127.0.0.1 at 2012-03-26 23:47:15 -0700
+Processing by CombatLogsController#show as HTML
+  Parameters: {"id"=>"2"}
+Completed 500 Internal Server Error in 0ms
+
+ActiveRecord::StatementInvalid (Could not find table 'combat_logs'):
+  app/controllers/combat_logs_controller.rb:12:in `show'
+
+
+  Rendered /Users/jkiehl/.rbenv/versions/1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.2ms)
+  Rendered /Users/jkiehl/.rbenv/versions/1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/jkiehl/.rbenv/versions/1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.1ms)
+
+
+Started GET "/combat_logs/2" for 127.0.0.1 at 2012-03-26 23:47:17 -0700
+Processing by CombatLogsController#show as HTML
+  Parameters: {"id"=>"2"}
+Completed 500 Internal Server Error in 0ms
+
+ActiveRecord::StatementInvalid (Could not find table 'combat_logs'):
+  app/controllers/combat_logs_controller.rb:12:in `show'
+
+
+  Rendered /Users/jkiehl/.rbenv/versions/1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.2ms)
+  Rendered /Users/jkiehl/.rbenv/versions/1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/jkiehl/.rbenv/versions/1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.2ms)
+
+
+Started GET "/combat_logs/2" for 127.0.0.1 at 2012-03-26 23:47:17 -0700
+Processing by CombatLogsController#show as HTML
+  Parameters: {"id"=>"2"}
+Completed 500 Internal Server Error in 0ms
+
+ActiveRecord::StatementInvalid (Could not find table 'combat_logs'):
+  app/controllers/combat_logs_controller.rb:12:in `show'
+
+
+  Rendered /Users/jkiehl/.rbenv/versions/1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.3ms)
+  Rendered /Users/jkiehl/.rbenv/versions/1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /Users/jkiehl/.rbenv/versions/1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.9ms)
+
+
+Started GET "/combat_logs/2" for 127.0.0.1 at 2012-03-26 23:47:17 -0700
+Processing by CombatLogsController#show as HTML
+  Parameters: {"id"=>"2"}
+Completed 500 Internal Server Error in 1ms
+
+ActiveRecord::StatementInvalid (Could not find table 'combat_logs'):
+  app/controllers/combat_logs_controller.rb:12:in `show'
+
+
+  Rendered /Users/jkiehl/.rbenv/versions/1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.1ms)
+  Rendered /Users/jkiehl/.rbenv/versions/1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /Users/jkiehl/.rbenv/versions/1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.1ms)
+
+
+Started GET "/combat_logs/2" for 127.0.0.1 at 2012-03-26 23:47:18 -0700
+Processing by CombatLogsController#show as HTML
+  Parameters: {"id"=>"2"}
+Completed 500 Internal Server Error in 0ms
+
+ActiveRecord::StatementInvalid (Could not find table 'combat_logs'):
+  app/controllers/combat_logs_controller.rb:12:in `show'
+
+
+  Rendered /Users/jkiehl/.rbenv/versions/1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.2ms)
+  Rendered /Users/jkiehl/.rbenv/versions/1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /Users/jkiehl/.rbenv/versions/1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.2ms)
+
+
+Started GET "/combat_logs/2" for 127.0.0.1 at 2012-03-26 23:47:18 -0700
+Processing by CombatLogsController#show as HTML
+  Parameters: {"id"=>"2"}
+Completed 500 Internal Server Error in 0ms
+
+ActiveRecord::StatementInvalid (Could not find table 'combat_logs'):
+  app/controllers/combat_logs_controller.rb:12:in `show'
+
+
+  Rendered /Users/jkiehl/.rbenv/versions/1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.1ms)
+  Rendered /Users/jkiehl/.rbenv/versions/1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/jkiehl/.rbenv/versions/1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.2ms)
+
+
+Started GET "/combat_logs/2" for 127.0.0.1 at 2012-03-26 23:47:18 -0700
+Processing by CombatLogsController#show as HTML
+  Parameters: {"id"=>"2"}
+Completed 500 Internal Server Error in 0ms
+
+ActiveRecord::StatementInvalid (Could not find table 'combat_logs'):
+  app/controllers/combat_logs_controller.rb:12:in `show'
+
+
+  Rendered /Users/jkiehl/.rbenv/versions/1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.2ms)
+  Rendered /Users/jkiehl/.rbenv/versions/1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /Users/jkiehl/.rbenv/versions/1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.0ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateCombatLogs (20120325220927)
+Migrating to AddAttachmentFileToCombatLog (20120326023959)
+Migrating to RemoveFilenameFromCombatLogs (20120326025815)
+Migrating to CreateEntities (20120326063036)
+Migrating to AddCombatLogIdToEntities (20120326070606)
+Migrating to AddMaxDamageToEntities (20120327063533)
+Migrating to AddMaxHealingToEntities (20120327064401)
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("combat_logs")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("entities")[0m
+
+
+Started GET "/combat_logs/2" for 127.0.0.1 at 2012-03-26 23:47:32 -0700
+Processing by CombatLogsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCombatLog Load (0.1ms)[0m  [1mSELECT "combat_logs".* FROM "combat_logs" WHERE "combat_logs"."id" = ? LIMIT 1[0m  [["id", "2"]]
+Completed 500 Internal Server Error in 1ms
+
+ActiveRecord::RecordNotFound (Couldn't find CombatLog with id=2):
+  app/controllers/combat_logs_controller.rb:12:in `show'
+
+
+  Rendered /Users/jkiehl/.rbenv/versions/1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+  Rendered /Users/jkiehl/.rbenv/versions/1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /Users/jkiehl/.rbenv/versions/1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.7ms)
+
+
+Started GET "/combat_logs/new" for 127.0.0.1 at 2012-03-26 23:47:36 -0700
+Processing by CombatLogsController#new as HTML
+  Rendered combat_logs/_form.html.haml (1.6ms)
+  Rendered combat_logs/new.html.haml within layouts/application (2.5ms)
+Completed 200 OK in 11ms (Views: 6.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-03-26 23:47:36 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/combat_logs.css?body=1" for 127.0.0.1 at 2012-03-26 23:47:37 -0700
+Served asset /combat_logs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-03-26 23:47:37 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-03-26 23:47:37 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-03-26 23:47:37 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-03-26 23:47:37 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/combat_logs.js?body=1" for 127.0.0.1 at 2012-03-26 23:47:37 -0700
+Served asset /combat_logs.js - 304 Not Modified (0ms)
+
+
+Started POST "/combat_logs" for 127.0.0.1 at 2012-03-26 23:47:42 -0700
+Processing by CombatLogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9VrMlk1dJC0bccUhaBF0dnq4TWXLOQvmv9aToejK9Do=", "combat_log"=>{"file"=>#<ActionDispatch::Http::UploadedFile:0x0000012a23f9d0 @original_filename="Ahri-vs-ForgeGuardian.txt", @content_type="text/plain", @headers="Content-Disposition: form-data; name=\"combat_log[file]\"; filename=\"Ahri-vs-ForgeGuardian.txt\"\r\nContent-Type: text/plain\r\n", @tempfile=#<File:/var/folders/Z-/Z-uObbvZH3iiShMl6LC3FU+++TM/-Tmp-/RackMultipart20120326-17071-1u0u1l4>>}, "commit"=>"Upload"}
+  [1m[35m (0.1ms)[0m  begin transaction
+Binary data inserted for `string` type on column `file_content_type`
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "combat_logs" ("created_at", "file_content_type", "file_file_name", "file_file_size", "file_updated_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Tue, 27 Mar 2012 06:47:42 UTC +00:00], ["file_content_type", "text/plain"], ["file_file_name", "Ahri-vs-ForgeGuardian.txt"], ["file_file_size", 55294], ["file_updated_at", Tue, 27 Mar 2012 06:47:42 UTC +00:00], ["updated_at", Tue, 27 Mar 2012 06:47:42 UTC +00:00]]
+[paperclip] Saving attachments.
+[paperclip] saving /Users/jkiehl/Adventures/scrunch-web/public/system/files/1/original/Ahri-vs-ForgeGuardian.txt
+  [1m[35m (1.6ms)[0m  commit transaction
+  [1m[36mEntity Load (0.1ms)[0m  [1mSELECT "entities".* FROM "entities" WHERE "entities"."combat_log_id" = 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "max_healing", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["combat_log_id", 1], ["created_at", Tue, 27 Mar 2012 06:47:42 UTC +00:00], ["max_damage", 193], ["max_healing", 423], ["name", "Ahri"], ["player", true], ["total_damage", 2825], ["total_healing", 815], ["updated_at", Tue, 27 Mar 2012 06:47:42 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "max_healing", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["combat_log_id", 1], ["created_at", Tue, 27 Mar 2012 06:47:42 UTC +00:00], ["max_damage", 52], ["max_healing", 0], ["name", "Ahri:T7-O1"], ["player", true], ["total_damage", 859], ["total_healing", 0], ["updated_at", Tue, 27 Mar 2012 06:47:42 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "max_healing", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["combat_log_id", 1], ["created_at", Tue, 27 Mar 2012 06:47:42 UTC +00:00], ["max_damage", 156], ["max_healing", 0], ["name", "Forge Guardian"], ["player", false], ["total_damage", 3122], ["total_healing", 0], ["updated_at", Tue, 27 Mar 2012 06:47:42 UTC +00:00]]
+  [1m[35m (2.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/combat_logs/1
+Completed 302 Found in 40ms (ActiveRecord: 5.5ms)
+
+
+Started GET "/combat_logs/1" for 127.0.0.1 at 2012-03-26 23:47:42 -0700
+Processing by CombatLogsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCombatLog Load (0.1ms)[0m  [1mSELECT "combat_logs".* FROM "combat_logs" WHERE "combat_logs"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mEntity Load (0.1ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."combat_log_id" = 1
+  Rendered combat_logs/_entity_row.html.haml (1.7ms)
+  Rendered combat_logs/_entity_row.html.haml (0.3ms)
+  Rendered combat_logs/show.html.haml within layouts/application (5.1ms)
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-03-26 23:47:42 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/combat_logs.css?body=1" for 127.0.0.1 at 2012-03-26 23:47:42 -0700
+Served asset /combat_logs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-03-26 23:47:42 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-03-26 23:47:42 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-03-26 23:47:42 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/combat_logs.js?body=1" for 127.0.0.1 at 2012-03-26 23:47:42 -0700
+Served asset /combat_logs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-03-26 23:47:42 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/combat_logs/1" for 127.0.0.1 at 2012-03-26 23:48:15 -0700
+Processing by CombatLogsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCombatLog Load (0.1ms)[0m  [1mSELECT "combat_logs".* FROM "combat_logs" WHERE "combat_logs"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mEntity Load (0.1ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."combat_log_id" = 1
+  Rendered combat_logs/_entity_row.html.haml (0.3ms)
+  Rendered combat_logs/_entity_row.html.haml (0.2ms)
+  Rendered combat_logs/show.html.haml within layouts/application (3.3ms)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-03-26 23:48:15 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/combat_logs.css?body=1" for 127.0.0.1 at 2012-03-26 23:48:16 -0700
+Served asset /combat_logs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-03-26 23:48:16 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-03-26 23:48:16 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-03-26 23:48:16 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-03-26 23:48:16 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/combat_logs.js?body=1" for 127.0.0.1 at 2012-03-26 23:48:16 -0700
+Served asset /combat_logs.js - 304 Not Modified (0ms)
+
+
+Started GET "/combat_logs/1" for 127.0.0.1 at 2012-03-26 23:48:16 -0700
+Processing by CombatLogsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCombatLog Load (0.1ms)[0m  [1mSELECT "combat_logs".* FROM "combat_logs" WHERE "combat_logs"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mEntity Load (0.1ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."combat_log_id" = 1
+  Rendered combat_logs/_entity_row.html.haml (0.3ms)
+  Rendered combat_logs/_entity_row.html.haml (0.2ms)
+  Rendered combat_logs/show.html.haml within layouts/application (3.5ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-03-26 23:48:16 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/combat_logs.css?body=1" for 127.0.0.1 at 2012-03-26 23:48:16 -0700
+Served asset /combat_logs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-03-26 23:48:16 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-03-26 23:48:16 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-03-26 23:48:16 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-03-26 23:48:16 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/combat_logs.js?body=1" for 127.0.0.1 at 2012-03-26 23:48:16 -0700
+Served asset /combat_logs.js - 304 Not Modified (0ms)
+
+
+Started GET "/combat_logs/1" for 127.0.0.1 at 2012-03-26 23:48:17 -0700
+Processing by CombatLogsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCombatLog Load (0.1ms)[0m  [1mSELECT "combat_logs".* FROM "combat_logs" WHERE "combat_logs"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mEntity Load (0.1ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."combat_log_id" = 1
+  Rendered combat_logs/_entity_row.html.haml (0.3ms)
+  Rendered combat_logs/_entity_row.html.haml (0.2ms)
+  Rendered combat_logs/show.html.haml within layouts/application (3.1ms)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-03-26 23:48:17 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/combat_logs.css?body=1" for 127.0.0.1 at 2012-03-26 23:48:17 -0700
+Served asset /combat_logs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-03-26 23:48:17 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-03-26 23:48:17 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-03-26 23:48:17 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/combat_logs.js?body=1" for 127.0.0.1 at 2012-03-26 23:48:17 -0700
+Served asset /combat_logs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-03-26 23:48:17 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateCombatLogs (20120325220927)
+Migrating to AddAttachmentFileToCombatLog (20120326023959)
+Migrating to RemoveFilenameFromCombatLogs (20120326025815)
+Migrating to CreateEntities (20120326063036)
+Migrating to AddCombatLogIdToEntities (20120326070606)
+Migrating to AddMaxDamageToEntities (20120327063533)
+Migrating to AddMaxHealingToEntities (20120327064401)
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("combat_logs")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("entities")[0m
+  [1m[35m (0.5ms)[0m  SELECT version FROM schema_migrations ORDER BY version
+
+
+Started GET "/combat_logs" for 127.0.0.1 at 2012-03-26 23:49:24 -0700
+Processing by CombatLogsController#index as HTML
+  [1m[36mCombatLog Load (0.1ms)[0m  [1mSELECT "combat_logs".* FROM "combat_logs" [0m
+  Rendered combat_logs/index.html.haml within layouts/application (2.7ms)
+Completed 200 OK in 101ms (Views: 95.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/combat_logs" for 127.0.0.1 at 2012-03-26 23:49:24 -0700
+Processing by CombatLogsController#index as HTML
+  [1m[35mCombatLog Load (0.1ms)[0m  SELECT "combat_logs".* FROM "combat_logs" 
+  Rendered combat_logs/index.html.haml within layouts/application (0.6ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-03-26 23:49:24 -0700
+Served asset /application.css - 304 Not Modified (31ms)
+
+
+Started GET "/assets/combat_logs.css?body=1" for 127.0.0.1 at 2012-03-26 23:49:25 -0700
+Served asset /combat_logs.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-03-26 23:49:25 -0700
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-03-26 23:49:25 -0700
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-03-26 23:49:25 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/combat_logs.js?body=1" for 127.0.0.1 at 2012-03-26 23:49:25 -0700
+Served asset /combat_logs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-03-26 23:49:25 -0700
+Served asset /application.js - 304 Not Modified (4ms)
+
+
+Started GET "/combat_logs/new" for 127.0.0.1 at 2012-03-26 23:49:26 -0700
+Processing by CombatLogsController#new as HTML
+  Rendered combat_logs/_form.html.haml (3.2ms)
+  Rendered combat_logs/new.html.haml within layouts/application (13.4ms)
+Completed 200 OK in 18ms (Views: 17.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-03-26 23:49:27 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/combat_logs.css?body=1" for 127.0.0.1 at 2012-03-26 23:49:27 -0700
+Served asset /combat_logs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-03-26 23:49:27 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-03-26 23:49:27 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-03-26 23:49:27 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/combat_logs.js?body=1" for 127.0.0.1 at 2012-03-26 23:49:27 -0700
+Served asset /combat_logs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-03-26 23:49:27 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/combat_logs" for 127.0.0.1 at 2012-03-26 23:49:31 -0700
+Processing by CombatLogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9VrMlk1dJC0bccUhaBF0dnq4TWXLOQvmv9aToejK9Do=", "combat_log"=>{"file"=>#<ActionDispatch::Http::UploadedFile:0x00000100baefb8 @original_filename="Ahri-vs-ForgeGuardian.txt", @content_type="text/plain", @headers="Content-Disposition: form-data; name=\"combat_log[file]\"; filename=\"Ahri-vs-ForgeGuardian.txt\"\r\nContent-Type: text/plain\r\n", @tempfile=#<File:/var/folders/Z-/Z-uObbvZH3iiShMl6LC3FU+++TM/-Tmp-/RackMultipart20120326-23228-1q79a5v>>}, "commit"=>"Upload"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Binary data inserted for `string` type on column `file_content_type`
+  [1m[35mSQL (40.8ms)[0m  INSERT INTO "combat_logs" ("created_at", "file_content_type", "file_file_name", "file_file_size", "file_updated_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Tue, 27 Mar 2012 06:49:31 UTC +00:00], ["file_content_type", "text/plain"], ["file_file_name", "Ahri-vs-ForgeGuardian.txt"], ["file_file_size", 55294], ["file_updated_at", Tue, 27 Mar 2012 06:49:31 UTC +00:00], ["updated_at", Tue, 27 Mar 2012 06:49:31 UTC +00:00]]
+[paperclip] Saving attachments.
+[paperclip] saving /Users/jkiehl/Adventures/scrunch-web/public/system/files/2/original/Ahri-vs-ForgeGuardian.txt
+  [1m[36m (188.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mEntity Load (0.1ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."combat_log_id" = 2
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "max_healing", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["combat_log_id", 2], ["created_at", Tue, 27 Mar 2012 06:49:32 UTC +00:00], ["max_damage", 193], ["max_healing", 423], ["name", "Ahri"], ["player", true], ["total_damage", 2825], ["total_healing", 815], ["updated_at", Tue, 27 Mar 2012 06:49:32 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "max_healing", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["combat_log_id", 2], ["created_at", Tue, 27 Mar 2012 06:49:32 UTC +00:00], ["max_damage", 52], ["max_healing", 0], ["name", "Ahri:T7-O1"], ["player", true], ["total_damage", 859], ["total_healing", 0], ["updated_at", Tue, 27 Mar 2012 06:49:32 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "max_healing", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["combat_log_id", 2], ["created_at", Tue, 27 Mar 2012 06:49:32 UTC +00:00], ["max_damage", 156], ["max_healing", 0], ["name", "Forge Guardian"], ["player", false], ["total_damage", 3122], ["total_healing", 0], ["updated_at", Tue, 27 Mar 2012 06:49:32 UTC +00:00]]
+  [1m[36m (2.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/combat_logs/2
+Completed 302 Found in 353ms (ActiveRecord: 232.1ms)
+
+
+Started GET "/combat_logs/2" for 127.0.0.1 at 2012-03-26 23:49:32 -0700
+Processing by CombatLogsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mCombatLog Load (0.2ms)[0m  SELECT "combat_logs".* FROM "combat_logs" WHERE "combat_logs"."id" = ? LIMIT 1  [["id", "2"]]
+  [1m[36mEntity Load (0.1ms)[0m  [1mSELECT "entities".* FROM "entities" WHERE "entities"."combat_log_id" = 2[0m
+  Rendered combat_logs/_entity_row.html.haml (1.8ms)
+  Rendered combat_logs/_entity_row.html.haml (0.3ms)
+  Rendered combat_logs/show.html.haml within layouts/application (8.1ms)
+Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-03-26 23:49:32 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/combat_logs.css?body=1" for 127.0.0.1 at 2012-03-26 23:49:32 -0700
+Served asset /combat_logs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-03-26 23:49:32 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-03-26 23:49:32 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-03-26 23:49:32 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/combat_logs.js?body=1" for 127.0.0.1 at 2012-03-26 23:49:32 -0700
+Served asset /combat_logs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-03-26 23:49:32 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/combat_logs" for 127.0.0.1 at 2012-03-26 23:51:03 -0700
+Processing by CombatLogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9VrMlk1dJC0bccUhaBF0dnq4TWXLOQvmv9aToejK9Do=", "combat_log"=>{"file"=>#<ActionDispatch::Http::UploadedFile:0x00000100badaa0 @original_filename="Ahri-vs-ForgeGuardian.txt", @content_type="text/plain", @headers="Content-Disposition: form-data; name=\"combat_log[file]\"; filename=\"Ahri-vs-ForgeGuardian.txt\"\r\nContent-Type: text/plain\r\n", @tempfile=#<File:/var/folders/Z-/Z-uObbvZH3iiShMl6LC3FU+++TM/-Tmp-/RackMultipart20120326-23228-1fe9fa>>}, "commit"=>"Upload"}
+  [1m[35m (0.0ms)[0m  begin transaction
+Binary data inserted for `string` type on column `file_content_type`
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "combat_logs" ("created_at", "file_content_type", "file_file_name", "file_file_size", "file_updated_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Tue, 27 Mar 2012 06:51:03 UTC +00:00], ["file_content_type", "text/plain"], ["file_file_name", "Ahri-vs-ForgeGuardian.txt"], ["file_file_size", 55294], ["file_updated_at", Tue, 27 Mar 2012 06:51:03 UTC +00:00], ["updated_at", Tue, 27 Mar 2012 06:51:03 UTC +00:00]]
+[paperclip] Saving attachments.
+[paperclip] saving /Users/jkiehl/Adventures/scrunch-web/public/system/files/3/original/Ahri-vs-ForgeGuardian.txt
+  [1m[35m (1.4ms)[0m  commit transaction
+Completed 500 Internal Server Error in 30ms
+
+NoMethodError (undefined method `+' for nil:NilClass):
+  app/models/entity.rb:37:in `add_effect_result'
+  app/models/combat_log.rb:34:in `block in crunch'
+  app/models/combat_log.rb:30:in `open'
+  app/models/combat_log.rb:30:in `crunch'
+  app/models/combat_log.rb:20:in `crunch'
+  app/controllers/combat_logs_controller.rb:36:in `block in create'
+  app/controllers/combat_logs_controller.rb:32:in `create'
+
+
+  Rendered /Users/jkiehl/.rbenv/versions/1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+  Rendered /Users/jkiehl/.rbenv/versions/1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/jkiehl/.rbenv/versions/1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.9ms)
+
+
+Started POST "/combat_logs" for 127.0.0.1 at 2012-03-26 23:51:27 -0700
+Processing by CombatLogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9VrMlk1dJC0bccUhaBF0dnq4TWXLOQvmv9aToejK9Do=", "combat_log"=>{"file"=>#<ActionDispatch::Http::UploadedFile:0x0000012b2b91a8 @original_filename="Ahri-vs-ForgeGuardian.txt", @content_type="text/plain", @headers="Content-Disposition: form-data; name=\"combat_log[file]\"; filename=\"Ahri-vs-ForgeGuardian.txt\"\r\nContent-Type: text/plain\r\n", @tempfile=#<File:/var/folders/Z-/Z-uObbvZH3iiShMl6LC3FU+++TM/-Tmp-/RackMultipart20120326-23228-55ssvq>>}, "commit"=>"Upload"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Binary data inserted for `string` type on column `file_content_type`
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "combat_logs" ("created_at", "file_content_type", "file_file_name", "file_file_size", "file_updated_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Tue, 27 Mar 2012 06:51:27 UTC +00:00], ["file_content_type", "text/plain"], ["file_file_name", "Ahri-vs-ForgeGuardian.txt"], ["file_file_size", 55294], ["file_updated_at", Tue, 27 Mar 2012 06:51:27 UTC +00:00], ["updated_at", Tue, 27 Mar 2012 06:51:27 UTC +00:00]]
+[paperclip] Saving attachments.
+[paperclip] saving /Users/jkiehl/Adventures/scrunch-web/public/system/files/4/original/Ahri-vs-ForgeGuardian.txt
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mEntity Load (0.1ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."combat_log_id" = 4
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "max_healing", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["combat_log_id", 4], ["created_at", Tue, 27 Mar 2012 06:51:27 UTC +00:00], ["max_damage", 193], ["max_healing", 423], ["name", "Ahri"], ["player", true], ["total_damage", 2825], ["total_healing", 815], ["updated_at", Tue, 27 Mar 2012 06:51:27 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "max_healing", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["combat_log_id", 4], ["created_at", Tue, 27 Mar 2012 06:51:27 UTC +00:00], ["max_damage", 52], ["max_healing", 0], ["name", "Ahri:T7-O1"], ["player", true], ["total_damage", 859], ["total_healing", 0], ["updated_at", Tue, 27 Mar 2012 06:51:27 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "max_healing", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["combat_log_id", 4], ["created_at", Tue, 27 Mar 2012 06:51:27 UTC +00:00], ["max_damage", 156], ["max_healing", 0], ["name", "Forge Guardian"], ["player", false], ["total_damage", 3122], ["total_healing", 0], ["updated_at", Tue, 27 Mar 2012 06:51:27 UTC +00:00]]
+  [1m[36m (212.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/combat_logs/4
+Completed 302 Found in 257ms (ActiveRecord: 215.3ms)
+
+
+Started GET "/combat_logs/4" for 127.0.0.1 at 2012-03-26 23:51:28 -0700
+Processing by CombatLogsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mCombatLog Load (0.2ms)[0m  SELECT "combat_logs".* FROM "combat_logs" WHERE "combat_logs"."id" = ? LIMIT 1  [["id", "4"]]
+  [1m[36mEntity Load (0.1ms)[0m  [1mSELECT "entities".* FROM "entities" WHERE "entities"."combat_log_id" = 4[0m
+  Rendered combat_logs/_entity_row.html.haml (0.3ms)
+  Rendered combat_logs/_entity_row.html.haml (0.3ms)
+  Rendered combat_logs/show.html.haml within layouts/application (3.2ms)
+Completed 200 OK in 41ms (Views: 40.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-03-26 23:51:28 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/combat_logs.css?body=1" for 127.0.0.1 at 2012-03-26 23:51:28 -0700
+Served asset /combat_logs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-03-26 23:51:28 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-03-26 23:51:28 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-03-26 23:51:28 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-03-26 23:51:28 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/combat_logs.js?body=1" for 127.0.0.1 at 2012-03-26 23:51:28 -0700
+Served asset /combat_logs.js - 304 Not Modified (0ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateCombatLogs (20120325220927)
+Migrating to AddAttachmentFileToCombatLog (20120326023959)
+Migrating to RemoveFilenameFromCombatLogs (20120326025815)
+Migrating to CreateEntities (20120326063036)
+Migrating to AddCombatLogIdToEntities (20120326070606)
+Migrating to AddMaxDamageToEntities (20120327063533)
+Migrating to AddMaxHealingToEntities (20120327064401)
+Migrating to ChangeMaxHealingAndMaxDamageToStringForSerialization (20120327070235)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TEMPORARY TABLE "altered_entities" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "total_damage" integer, "player" boolean, "total_healing" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "combat_log_id" integer, "max_damage" integer, "max_healing" integer) 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("entities")[0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "entities"
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "altered_entities" ("id","name","total_damage","player","total_healing","created_at","updated_at","combat_log_id","max_damage","max_healing") VALUES (1, 'Ahri', 2825, 't', 815, '2012-03-27 06:47:42.088683', '2012-03-27 06:47:42.088683', 1, 193, 423)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_entities" ("id","name","total_damage","player","total_healing","created_at","updated_at","combat_log_id","max_damage","max_healing") VALUES (2, 'Ahri:T7-O1', 859, 't', 0, '2012-03-27 06:47:42.089787', '2012-03-27 06:47:42.089787', 1, 52, 0)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_entities" ("id","name","total_damage","player","total_healing","created_at","updated_at","combat_log_id","max_damage","max_healing") VALUES (3, 'Forge Guardian', 3122, 'f', 0, '2012-03-27 06:47:42.090436', '2012-03-27 06:47:42.090436', 1, 156, 0)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_entities" ("id","name","total_damage","player","total_healing","created_at","updated_at","combat_log_id","max_damage","max_healing") VALUES (4, 'Ahri', 2825, 't', 815, '2012-03-27 06:49:32.158346', '2012-03-27 06:49:32.158346', 2, 193, 423)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_entities" ("id","name","total_damage","player","total_healing","created_at","updated_at","combat_log_id","max_damage","max_healing") VALUES (5, 'Ahri:T7-O1', 859, 't', 0, '2012-03-27 06:49:32.159615', '2012-03-27 06:49:32.159615', 2, 52, 0)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_entities" ("id","name","total_damage","player","total_healing","created_at","updated_at","combat_log_id","max_damage","max_healing") VALUES (6, 'Forge Guardian', 3122, 'f', 0, '2012-03-27 06:49:32.160224', '2012-03-27 06:49:32.160224', 2, 156, 0)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_entities" ("id","name","total_damage","player","total_healing","created_at","updated_at","combat_log_id","max_damage","max_healing") VALUES (7, 'Ahri', 2825, 't', 815, '2012-03-27 06:51:27.925954', '2012-03-27 06:51:27.925954', 4, 193, 423)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_entities" ("id","name","total_damage","player","total_healing","created_at","updated_at","combat_log_id","max_damage","max_healing") VALUES (8, 'Ahri:T7-O1', 859, 't', 0, '2012-03-27 06:51:27.927085', '2012-03-27 06:51:27.927085', 4, 52, 0)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_entities" ("id","name","total_damage","player","total_healing","created_at","updated_at","combat_log_id","max_damage","max_healing") VALUES (9, 'Forge Guardian', 3122, 'f', 0, '2012-03-27 06:51:27.927675', '2012-03-27 06:51:27.927675', 4, 156, 0)[0m
+  [1m[35m (0.4ms)[0m  DROP TABLE "entities"
+  [1m[36m (0.1ms)[0m  [1mCREATE TABLE "entities" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "total_damage" integer, "player" boolean, "total_healing" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "combat_log_id" integer, "max_damage" varchar(255), "max_healing" integer) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("altered_entities")
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "altered_entities"[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "entities" ("id","name","total_damage","player","total_healing","created_at","updated_at","combat_log_id","max_damage","max_healing") VALUES (1, 'Ahri', 2825, 't', 815, '2012-03-27 06:47:42.088683', '2012-03-27 06:47:42.088683', 1, 193, 423)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "entities" ("id","name","total_damage","player","total_healing","created_at","updated_at","combat_log_id","max_damage","max_healing") VALUES (2, 'Ahri:T7-O1', 859, 't', 0, '2012-03-27 06:47:42.089787', '2012-03-27 06:47:42.089787', 1, 52, 0)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "entities" ("id","name","total_damage","player","total_healing","created_at","updated_at","combat_log_id","max_damage","max_healing") VALUES (3, 'Forge Guardian', 3122, 'f', 0, '2012-03-27 06:47:42.090436', '2012-03-27 06:47:42.090436', 1, 156, 0)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "entities" ("id","name","total_damage","player","total_healing","created_at","updated_at","combat_log_id","max_damage","max_healing") VALUES (4, 'Ahri', 2825, 't', 815, '2012-03-27 06:49:32.158346', '2012-03-27 06:49:32.158346', 2, 193, 423)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "entities" ("id","name","total_damage","player","total_healing","created_at","updated_at","combat_log_id","max_damage","max_healing") VALUES (5, 'Ahri:T7-O1', 859, 't', 0, '2012-03-27 06:49:32.159615', '2012-03-27 06:49:32.159615', 2, 52, 0)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "entities" ("id","name","total_damage","player","total_healing","created_at","updated_at","combat_log_id","max_damage","max_healing") VALUES (6, 'Forge Guardian', 3122, 'f', 0, '2012-03-27 06:49:32.160224', '2012-03-27 06:49:32.160224', 2, 156, 0)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "entities" ("id","name","total_damage","player","total_healing","created_at","updated_at","combat_log_id","max_damage","max_healing") VALUES (7, 'Ahri', 2825, 't', 815, '2012-03-27 06:51:27.925954', '2012-03-27 06:51:27.925954', 4, 193, 423)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "entities" ("id","name","total_damage","player","total_healing","created_at","updated_at","combat_log_id","max_damage","max_healing") VALUES (8, 'Ahri:T7-O1', 859, 't', 0, '2012-03-27 06:51:27.927085', '2012-03-27 06:51:27.927085', 4, 52, 0)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "entities" ("id","name","total_damage","player","total_healing","created_at","updated_at","combat_log_id","max_damage","max_healing") VALUES (9, 'Forge Guardian', 3122, 'f', 0, '2012-03-27 06:51:27.927675', '2012-03-27 06:51:27.927675', 4, 156, 0)
+  [1m[36m (0.3ms)[0m  [1mDROP TABLE "altered_entities"[0m
+  [1m[35m (0.1ms)[0m  CREATE TEMPORARY TABLE "altered_entities" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "total_damage" integer, "player" boolean, "total_healing" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "combat_log_id" integer, "max_damage" varchar(255), "max_healing" integer) 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("entities")[0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "entities"
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_entities" ("id","name","total_damage","player","total_healing","created_at","updated_at","combat_log_id","max_damage","max_healing") VALUES (1, 'Ahri', 2825, 't', 815, '2012-03-27 06:47:42.088683', '2012-03-27 06:47:42.088683', 1, '193', 423)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_entities" ("id","name","total_damage","player","total_healing","created_at","updated_at","combat_log_id","max_damage","max_healing") VALUES (2, 'Ahri:T7-O1', 859, 't', 0, '2012-03-27 06:47:42.089787', '2012-03-27 06:47:42.089787', 1, '52', 0)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_entities" ("id","name","total_damage","player","total_healing","created_at","updated_at","combat_log_id","max_damage","max_healing") VALUES (3, 'Forge Guardian', 3122, 'f', 0, '2012-03-27 06:47:42.090436', '2012-03-27 06:47:42.090436', 1, '156', 0)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_entities" ("id","name","total_damage","player","total_healing","created_at","updated_at","combat_log_id","max_damage","max_healing") VALUES (4, 'Ahri', 2825, 't', 815, '2012-03-27 06:49:32.158346', '2012-03-27 06:49:32.158346', 2, '193', 423)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_entities" ("id","name","total_damage","player","total_healing","created_at","updated_at","combat_log_id","max_damage","max_healing") VALUES (5, 'Ahri:T7-O1', 859, 't', 0, '2012-03-27 06:49:32.159615', '2012-03-27 06:49:32.159615', 2, '52', 0)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_entities" ("id","name","total_damage","player","total_healing","created_at","updated_at","combat_log_id","max_damage","max_healing") VALUES (6, 'Forge Guardian', 3122, 'f', 0, '2012-03-27 06:49:32.160224', '2012-03-27 06:49:32.160224', 2, '156', 0)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_entities" ("id","name","total_damage","player","total_healing","created_at","updated_at","combat_log_id","max_damage","max_healing") VALUES (7, 'Ahri', 2825, 't', 815, '2012-03-27 06:51:27.925954', '2012-03-27 06:51:27.925954', 4, '193', 423)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_entities" ("id","name","total_damage","player","total_healing","created_at","updated_at","combat_log_id","max_damage","max_healing") VALUES (8, 'Ahri:T7-O1', 859, 't', 0, '2012-03-27 06:51:27.927085', '2012-03-27 06:51:27.927085', 4, '52', 0)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_entities" ("id","name","total_damage","player","total_healing","created_at","updated_at","combat_log_id","max_damage","max_healing") VALUES (9, 'Forge Guardian', 3122, 'f', 0, '2012-03-27 06:51:27.927675', '2012-03-27 06:51:27.927675', 4, '156', 0)[0m
+  [1m[35m (0.1ms)[0m  DROP TABLE "entities"
+  [1m[36m (0.1ms)[0m  [1mCREATE TABLE "entities" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "total_damage" integer, "player" boolean, "total_healing" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "combat_log_id" integer, "max_damage" varchar(255), "max_healing" varchar(255)) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("altered_entities")
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "altered_entities"[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "entities" ("id","name","total_damage","player","total_healing","created_at","updated_at","combat_log_id","max_damage","max_healing") VALUES (1, 'Ahri', 2825, 't', 815, '2012-03-27 06:47:42.088683', '2012-03-27 06:47:42.088683', 1, '193', 423)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "entities" ("id","name","total_damage","player","total_healing","created_at","updated_at","combat_log_id","max_damage","max_healing") VALUES (2, 'Ahri:T7-O1', 859, 't', 0, '2012-03-27 06:47:42.089787', '2012-03-27 06:47:42.089787', 1, '52', 0)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "entities" ("id","name","total_damage","player","total_healing","created_at","updated_at","combat_log_id","max_damage","max_healing") VALUES (3, 'Forge Guardian', 3122, 'f', 0, '2012-03-27 06:47:42.090436', '2012-03-27 06:47:42.090436', 1, '156', 0)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "entities" ("id","name","total_damage","player","total_healing","created_at","updated_at","combat_log_id","max_damage","max_healing") VALUES (4, 'Ahri', 2825, 't', 815, '2012-03-27 06:49:32.158346', '2012-03-27 06:49:32.158346', 2, '193', 423)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "entities" ("id","name","total_damage","player","total_healing","created_at","updated_at","combat_log_id","max_damage","max_healing") VALUES (5, 'Ahri:T7-O1', 859, 't', 0, '2012-03-27 06:49:32.159615', '2012-03-27 06:49:32.159615', 2, '52', 0)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "entities" ("id","name","total_damage","player","total_healing","created_at","updated_at","combat_log_id","max_damage","max_healing") VALUES (6, 'Forge Guardian', 3122, 'f', 0, '2012-03-27 06:49:32.160224', '2012-03-27 06:49:32.160224', 2, '156', 0)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "entities" ("id","name","total_damage","player","total_healing","created_at","updated_at","combat_log_id","max_damage","max_healing") VALUES (7, 'Ahri', 2825, 't', 815, '2012-03-27 06:51:27.925954', '2012-03-27 06:51:27.925954', 4, '193', 423)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "entities" ("id","name","total_damage","player","total_healing","created_at","updated_at","combat_log_id","max_damage","max_healing") VALUES (8, 'Ahri:T7-O1', 859, 't', 0, '2012-03-27 06:51:27.927085', '2012-03-27 06:51:27.927085', 4, '52', 0)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "entities" ("id","name","total_damage","player","total_healing","created_at","updated_at","combat_log_id","max_damage","max_healing") VALUES (9, 'Forge Guardian', 3122, 'f', 0, '2012-03-27 06:51:27.927675', '2012-03-27 06:51:27.927675', 4, '156', 0)
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE "altered_entities"[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20120327070235')
+  [1m[36m (3.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("combat_logs")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("entities")[0m
+  [1m[35m (0.6ms)[0m  SELECT version FROM schema_migrations ORDER BY version
+
+
+Started POST "/combat_logs" for 127.0.0.1 at 2012-03-27 00:13:56 -0700
+Processing by CombatLogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9VrMlk1dJC0bccUhaBF0dnq4TWXLOQvmv9aToejK9Do=", "combat_log"=>{"file"=>#<ActionDispatch::Http::UploadedFile:0x0000012ac20bc0 @original_filename="Ahri-vs-ForgeGuardian.txt", @content_type="text/plain", @headers="Content-Disposition: form-data; name=\"combat_log[file]\"; filename=\"Ahri-vs-ForgeGuardian.txt\"\r\nContent-Type: text/plain\r\n", @tempfile=#<File:/var/folders/Z-/Z-uObbvZH3iiShMl6LC3FU+++TM/-Tmp-/RackMultipart20120327-23228-x0hlyb>>}, "commit"=>"Upload"}
+  [1m[35m (0.1ms)[0m  begin transaction
+Binary data inserted for `string` type on column `file_content_type`
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "combat_logs" ("created_at", "file_content_type", "file_file_name", "file_file_size", "file_updated_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Tue, 27 Mar 2012 07:13:56 UTC +00:00], ["file_content_type", "text/plain"], ["file_file_name", "Ahri-vs-ForgeGuardian.txt"], ["file_file_size", 55294], ["file_updated_at", Tue, 27 Mar 2012 07:13:56 UTC +00:00], ["updated_at", Tue, 27 Mar 2012 07:13:56 UTC +00:00]]
+[paperclip] Saving attachments.
+[paperclip] saving /Users/jkiehl/Adventures/scrunch-web/public/system/files/5/original/Ahri-vs-ForgeGuardian.txt
+  [1m[35m (1.6ms)[0m  commit transaction
+  [1m[36mEntity Load (0.2ms)[0m  [1mSELECT "entities".* FROM "entities" WHERE "entities"."combat_log_id" = 5[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "max_healing", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["combat_log_id", 5], ["created_at", Tue, 27 Mar 2012 07:13:56 UTC +00:00], ["max_damage", "---\n:skill: Slash\n:amount: 193\n"], ["max_healing", "---\n:skill: Revive Companion\n:amount: 423\n"], ["name", "Ahri"], ["player", true], ["total_damage", 2825], ["total_healing", 815], ["updated_at", Tue, 27 Mar 2012 07:13:56 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "max_healing", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["combat_log_id", 5], ["created_at", Tue, 27 Mar 2012 07:13:56 UTC +00:00], ["max_damage", "---\n:skill: Ranged Attack\n:amount: 52\n"], ["max_healing", nil], ["name", "Ahri:T7-O1"], ["player", true], ["total_damage", 859], ["total_healing", 0], ["updated_at", Tue, 27 Mar 2012 07:13:56 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "max_healing", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["combat_log_id", 5], ["created_at", Tue, 27 Mar 2012 07:13:56 UTC +00:00], ["max_damage", "---\n:skill: Maul\n:amount: 156\n"], ["max_healing", nil], ["name", "Forge Guardian"], ["player", false], ["total_damage", 3122], ["total_healing", 0], ["updated_at", Tue, 27 Mar 2012 07:13:56 UTC +00:00]]
+  [1m[35m (1.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/combat_logs/5
+Completed 302 Found in 93ms (ActiveRecord: 5.0ms)
+
+
+Started GET "/combat_logs/5" for 127.0.0.1 at 2012-03-27 00:13:56 -0700
+Processing by CombatLogsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mCombatLog Load (0.2ms)[0m  [1mSELECT "combat_logs".* FROM "combat_logs" WHERE "combat_logs"."id" = ? LIMIT 1[0m  [["id", "5"]]
+  [1m[35mEntity Load (0.1ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."combat_log_id" = 5
+  Rendered combat_logs/_entity_row.html.haml (0.6ms)
+  Rendered combat_logs/_entity_row.html.haml (0.3ms)
+  Rendered combat_logs/show.html.haml within layouts/application (3.7ms)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-03-27 00:13:57 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/combat_logs.css?body=1" for 127.0.0.1 at 2012-03-27 00:13:57 -0700
+Served asset /combat_logs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-03-27 00:13:57 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-03-27 00:13:57 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-03-27 00:13:57 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-03-27 00:13:57 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/combat_logs.js?body=1" for 127.0.0.1 at 2012-03-27 00:13:57 -0700
+Served asset /combat_logs.js - 304 Not Modified (0ms)
+
+
+Started GET "/combat_logs/5" for 127.0.0.1 at 2012-03-27 00:15:30 -0700
+Processing by CombatLogsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mCombatLog Load (0.1ms)[0m  [1mSELECT "combat_logs".* FROM "combat_logs" WHERE "combat_logs"."id" = ? LIMIT 1[0m  [["id", "5"]]
+  [1m[35mEntity Load (0.1ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."combat_log_id" = 5
+  Rendered combat_logs/_entity_row.html.haml (2.3ms)
+  Rendered combat_logs/_entity_row.html.haml (0.4ms)
+  Rendered combat_logs/show.html.haml within layouts/application (5.3ms)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-03-27 00:15:30 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/combat_logs.css?body=1" for 127.0.0.1 at 2012-03-27 00:15:30 -0700
+Served asset /combat_logs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-03-27 00:15:30 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-03-27 00:15:30 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-03-27 00:15:30 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-03-27 00:15:30 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/combat_logs.js?body=1" for 127.0.0.1 at 2012-03-27 00:15:31 -0700
+Served asset /combat_logs.js - 304 Not Modified (0ms)
+
+
+Started GET "/combat_logs/5" for 127.0.0.1 at 2012-03-27 00:16:49 -0700
+Processing by CombatLogsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mCombatLog Load (0.1ms)[0m  [1mSELECT "combat_logs".* FROM "combat_logs" WHERE "combat_logs"."id" = ? LIMIT 1[0m  [["id", "5"]]
+  [1m[35mEntity Load (0.1ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."combat_log_id" = 5
+  Rendered combat_logs/_entity_row.html.haml (2.6ms)
+  Rendered combat_logs/show.html.haml within layouts/application (4.4ms)
+Completed 500 Internal Server Error in 7ms
+
+ActionView::Template::Error (can't convert Fixnum into String):
+    3:   - case type
+    4:   - when :damage
+    5:     %td= entity_row.total_damage
+    6:     %td= (entity_row.max_damage[:skill] + (entity_row.max_damage.empty? ? '' : ': ' ) + entity_row.max_damage[:amount])
+    7:   - when :healing
+    8:     %td= entity_row.total_healing
+    9:     %td= (entity_row.max_healing[:skill] + (entity_row.max_healing.empty? ? '' : ': ' ) + entity_row.max_healing[:amount])
+  app/views/combat_logs/_entity_row.html.haml:6:in `+'
+  app/views/combat_logs/_entity_row.html.haml:6:in `_app_views_combat_logs__entity_row_html_haml___1474429353713729669_2159548100'
+  app/views/combat_logs/show.html.haml:13:in `_app_views_combat_logs_show_html_haml___427537547634906280_2510522960'
+  app/controllers/combat_logs_controller.rb:14:in `show'
+
+
+  Rendered /Users/jkiehl/.rbenv/versions/1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.9ms)
+  Rendered /Users/jkiehl/.rbenv/versions/1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /Users/jkiehl/.rbenv/versions/1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.4ms)
+
+
+Started GET "/combat_logs/5" for 127.0.0.1 at 2012-03-27 00:17:11 -0700
+Processing by CombatLogsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mCombatLog Load (0.1ms)[0m  [1mSELECT "combat_logs".* FROM "combat_logs" WHERE "combat_logs"."id" = ? LIMIT 1[0m  [["id", "5"]]
+  [1m[35mEntity Load (0.1ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."combat_log_id" = 5
+  Rendered combat_logs/_entity_row.html.haml (2.3ms)
+  Rendered combat_logs/_entity_row.html.haml (0.9ms)
+  Rendered combat_logs/show.html.haml within layouts/application (5.6ms)
+Completed 500 Internal Server Error in 8ms
+
+ActionView::Template::Error (undefined method `+' for nil:NilClass):
+    6:     %td= (entity_row.max_damage[:skill] + (entity_row.max_damage.empty? ? '' : ': ' ) + entity_row.max_damage[:amount].to_s)
+    7:   - when :healing
+    8:     %td= entity_row.total_healing
+    9:     %td= (entity_row.max_healing[:skill] + (entity_row.max_healing.empty? ? '' : ': ' ) + entity_row.max_healing[:amount].to_s)
+  app/views/combat_logs/_entity_row.html.haml:9:in `_app_views_combat_logs__entity_row_html_haml___1474429353713729669_2153297940'
+  app/views/combat_logs/show.html.haml:21:in `_app_views_combat_logs_show_html_haml___427537547634906280_2510522960'
+  app/controllers/combat_logs_controller.rb:14:in `show'
+
+
+  Rendered /Users/jkiehl/.rbenv/versions/1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.9ms)
+  Rendered /Users/jkiehl/.rbenv/versions/1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /Users/jkiehl/.rbenv/versions/1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.7ms)
+
+
+Started GET "/combat_logs/5" for 127.0.0.1 at 2012-03-27 00:19:48 -0700
+Processing by CombatLogsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mCombatLog Load (0.1ms)[0m  [1mSELECT "combat_logs".* FROM "combat_logs" WHERE "combat_logs"."id" = ? LIMIT 1[0m  [["id", "5"]]
+  [1m[35mEntity Load (0.1ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."combat_log_id" = 5
+  Rendered combat_logs/_entity_row.html.haml (2.2ms)
+  Rendered combat_logs/_entity_row.html.haml (0.3ms)
+  Rendered combat_logs/show.html.haml within layouts/application (5.2ms)
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-03-27 00:19:48 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/combat_logs.css?body=1" for 127.0.0.1 at 2012-03-27 00:19:48 -0700
+Served asset /combat_logs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-03-27 00:19:48 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-03-27 00:19:48 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-03-27 00:19:48 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-03-27 00:19:48 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/combat_logs.js?body=1" for 127.0.0.1 at 2012-03-27 00:19:48 -0700
+Served asset /combat_logs.js - 304 Not Modified (0ms)
+
+
+Started GET "/combat_logs/5" for 127.0.0.1 at 2012-03-27 00:19:58 -0700
+Processing by CombatLogsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mCombatLog Load (0.1ms)[0m  [1mSELECT "combat_logs".* FROM "combat_logs" WHERE "combat_logs"."id" = ? LIMIT 1[0m  [["id", "5"]]
+  [1m[35mEntity Load (0.1ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."combat_log_id" = 5
+  Rendered combat_logs/_entity_row.html.haml (35.2ms)
+  Rendered combat_logs/_entity_row.html.haml (0.4ms)
+  Rendered combat_logs/show.html.haml within layouts/application (39.0ms)
+Completed 200 OK in 44ms (Views: 42.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-03-27 00:19:58 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/combat_logs.css?body=1" for 127.0.0.1 at 2012-03-27 00:19:58 -0700
+Served asset /combat_logs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-03-27 00:19:58 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-03-27 00:19:58 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-03-27 00:19:58 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/combat_logs.js?body=1" for 127.0.0.1 at 2012-03-27 00:19:58 -0700
+Served asset /combat_logs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-03-27 00:19:58 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/combat_logs/5" for 127.0.0.1 at 2012-03-27 00:20:33 -0700
+Processing by CombatLogsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mCombatLog Load (0.1ms)[0m  [1mSELECT "combat_logs".* FROM "combat_logs" WHERE "combat_logs"."id" = ? LIMIT 1[0m  [["id", "5"]]
+  [1m[35mEntity Load (0.1ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."combat_log_id" = 5
+  Rendered combat_logs/_entity_row.html.haml (0.7ms)
+  Rendered combat_logs/_entity_row.html.haml (0.4ms)
+  Rendered combat_logs/show.html.haml within layouts/application (6.3ms)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-03-27 00:20:33 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/combat_logs.css?body=1" for 127.0.0.1 at 2012-03-27 00:20:33 -0700
+Served asset /combat_logs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-03-27 00:20:33 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-03-27 00:20:33 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-03-27 00:20:33 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-03-27 00:20:33 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/combat_logs.js?body=1" for 127.0.0.1 at 2012-03-27 00:20:33 -0700
+Served asset /combat_logs.js - 304 Not Modified (0ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.8ms)[0m  [1mCREATE TABLE "combat_logs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "file_file_name" varchar(255), "file_content_type" varchar(255), "file_file_size" integer, "file_updated_at" datetime) [0m
+  [1m[35m (1.8ms)[0m  CREATE TABLE "entities" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "total_damage" integer, "player" boolean, "total_healing" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "combat_log_id" integer, "max_damage" varchar(255), "max_healing" varchar(255)) 
+  [1m[36m (1.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (1.6ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.0ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120327070235')[0m
+  [1m[35m (1.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120325220927')
+  [1m[36m (1.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120326023959')[0m
+  [1m[35m (1.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120326025815')
+  [1m[36m (1.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120326063036')[0m
+  [1m[35m (1.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120326070606')
+  [1m[36m (1.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120327063533')[0m
+  [1m[35m (1.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120327064401')
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.9ms)[0m  [1mCREATE TABLE "combat_logs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "file_file_name" varchar(255), "file_content_type" varchar(255), "file_file_size" integer, "file_updated_at" datetime) [0m
+  [1m[35m (1.6ms)[0m  CREATE TABLE "entities" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "total_damage" integer, "player" boolean, "total_healing" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "combat_log_id" integer, "max_damage" varchar(255), "max_healing" varchar(255)) 
+  [1m[36m (1.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (1.6ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.0ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120327070235')[0m
+  [1m[35m (1.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120325220927')
+  [1m[36m (1.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120326023959')[0m
+  [1m[35m (1.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120326025815')
+  [1m[36m (1.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120326063036')[0m
+  [1m[35m (1.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120326070606')
+  [1m[36m (1.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120327063533')[0m
+  [1m[35m (1.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120327064401')
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (3.1ms)[0m  [1mCREATE TABLE "combat_logs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "file_file_name" varchar(255), "file_content_type" varchar(255), "file_file_size" integer, "file_updated_at" datetime) [0m
+  [1m[35m (1.7ms)[0m  CREATE TABLE "entities" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "total_damage" integer, "player" boolean, "total_healing" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "combat_log_id" integer, "max_damage" varchar(255), "max_healing" varchar(255)) 
+  [1m[36m (1.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (1.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.0ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120327070235')[0m
+  [1m[35m (1.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120325220927')
+  [1m[36m (1.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120326023959')[0m
+  [1m[35m (1.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120326025815')
+  [1m[36m (1.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120326063036')[0m
+  [1m[35m (1.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120326070606')
+  [1m[36m (1.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120327063533')[0m
+  [1m[35m (1.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120327064401')
+
+
+Started GET "/combat_logs/5" for 127.0.0.1 at 2012-03-27 00:24:43 -0700
+Processing by CombatLogsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mCombatLog Load (0.1ms)[0m  [1mSELECT "combat_logs".* FROM "combat_logs" WHERE "combat_logs"."id" = ? LIMIT 1[0m  [["id", "5"]]
+  [1m[35mEntity Load (0.1ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."combat_log_id" = 5
+  Rendered combat_logs/_entity_row.html.haml (2.5ms)
+  Rendered combat_logs/_entity_row.html.haml (0.5ms)
+  Rendered combat_logs/show.html.haml within layouts/application (5.7ms)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-03-27 00:24:43 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/combat_logs.css?body=1" for 127.0.0.1 at 2012-03-27 00:24:43 -0700
+Served asset /combat_logs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-03-27 00:24:43 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-03-27 00:24:43 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-03-27 00:24:43 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-03-27 00:24:43 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/combat_logs.js?body=1" for 127.0.0.1 at 2012-03-27 00:24:43 -0700
+Served asset /combat_logs.js - 304 Not Modified (0ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (2.7ms)[0m  [1mCREATE TABLE "combat_logs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "file_file_name" varchar(255), "file_content_type" varchar(255), "file_file_size" integer, "file_updated_at" datetime) [0m
+  [1m[35m (1.5ms)[0m  CREATE TABLE "entities" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "total_damage" integer, "player" boolean, "total_healing" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "combat_log_id" integer, "max_damage" varchar(255), "max_healing" varchar(255)) 
+  [1m[36m (1.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (1.6ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.0ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120327070235')[0m
+  [1m[35m (1.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120325220927')
+  [1m[36m (1.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120326023959')[0m
+  [1m[35m (1.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120326025815')
+  [1m[36m (1.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120326063036')[0m
+  [1m[35m (1.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120326070606')
+  [1m[36m (1.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120327063533')[0m
+  [1m[35m (1.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120327064401')
+
+
+Started GET "/combat_logs/5" for 127.0.0.1 at 2012-03-27 00:25:26 -0700
+Processing by CombatLogsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mCombatLog Load (0.1ms)[0m  [1mSELECT "combat_logs".* FROM "combat_logs" WHERE "combat_logs"."id" = ? LIMIT 1[0m  [["id", "5"]]
+  [1m[35mEntity Load (0.1ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."combat_log_id" = 5
+  Rendered combat_logs/_entity_row.html.haml (3.4ms)
+  Rendered combat_logs/_entity_row.html.haml (0.9ms)
+  Rendered combat_logs/show.html.haml within layouts/application (6.9ms)
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-03-27 00:25:26 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/combat_logs.css?body=1" for 127.0.0.1 at 2012-03-27 00:25:26 -0700
+Served asset /combat_logs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-03-27 00:25:26 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-03-27 00:25:26 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-03-27 00:25:26 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-03-27 00:25:26 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/combat_logs.js?body=1" for 127.0.0.1 at 2012-03-27 00:25:26 -0700
+Served asset /combat_logs.js - 304 Not Modified (0ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.7ms)[0m  [1mCREATE TABLE "combat_logs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "file_file_name" varchar(255), "file_content_type" varchar(255), "file_file_size" integer, "file_updated_at" datetime) [0m
+  [1m[35m (1.7ms)[0m  CREATE TABLE "entities" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "total_damage" integer, "player" boolean, "total_healing" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "combat_log_id" integer, "max_damage" varchar(255), "max_healing" varchar(255)) 
+  [1m[36m (1.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (1.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.0ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120327070235')[0m
+  [1m[35m (1.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120325220927')
+  [1m[36m (1.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120326023959')[0m
+  [1m[35m (1.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120326025815')
+  [1m[36m (1.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120326063036')[0m
+  [1m[35m (1.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120326070606')
+  [1m[36m (1.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120327063533')[0m
+  [1m[35m (1.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120327064401')
+
+
+Started GET "/combat_logs/5" for 127.0.0.1 at 2012-03-27 00:29:32 -0700
+Processing by CombatLogsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mCombatLog Load (0.1ms)[0m  [1mSELECT "combat_logs".* FROM "combat_logs" WHERE "combat_logs"."id" = ? LIMIT 1[0m  [["id", "5"]]
+  [1m[35mEntity Load (0.1ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."combat_log_id" = 5
+  Rendered combat_logs/_entity_row.html.haml (2.6ms)
+  Rendered combat_logs/_entity_row.html.haml (0.5ms)
+  Rendered combat_logs/show.html.haml within layouts/application (6.5ms)
+Completed 200 OK in 12ms (Views: 10.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-03-27 00:29:32 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/combat_logs.css?body=1" for 127.0.0.1 at 2012-03-27 00:29:32 -0700
+Served asset /combat_logs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-03-27 00:29:32 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-03-27 00:29:32 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-03-27 00:29:32 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-03-27 00:29:32 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/combat_logs.js?body=1" for 127.0.0.1 at 2012-03-27 00:29:32 -0700
+Served asset /combat_logs.js - 304 Not Modified (0ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (3.0ms)[0m  [1mCREATE TABLE "combat_logs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "file_file_name" varchar(255), "file_content_type" varchar(255), "file_file_size" integer, "file_updated_at" datetime) [0m
+  [1m[35m (1.7ms)[0m  CREATE TABLE "entities" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "total_damage" integer, "player" boolean, "total_healing" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "combat_log_id" integer, "max_damage" varchar(255), "max_healing" varchar(255)) 
+  [1m[36m (1.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (1.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.0ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120327070235')[0m
+  [1m[35m (1.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120325220927')
+  [1m[36m (1.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120326023959')[0m
+  [1m[35m (1.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120326025815')
+  [1m[36m (1.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120326063036')[0m
+  [1m[35m (2.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120326070606')
+  [1m[36m (1.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120327063533')[0m
+  [1m[35m (1.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120327064401')
+
+
+Started GET "/combat_logs/5" for 127.0.0.1 at 2012-03-27 00:30:06 -0700
+Processing by CombatLogsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mCombatLog Load (0.1ms)[0m  [1mSELECT "combat_logs".* FROM "combat_logs" WHERE "combat_logs"."id" = ? LIMIT 1[0m  [["id", "5"]]
+  [1m[35mEntity Load (0.1ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."combat_log_id" = 5
+  Rendered combat_logs/_entity_row.html.haml (2.4ms)
+  Rendered combat_logs/_entity_row.html.haml (0.5ms)
+  Rendered combat_logs/show.html.haml within layouts/application (5.6ms)
+Completed 200 OK in 42ms (Views: 41.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-03-27 00:30:06 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/combat_logs.css?body=1" for 127.0.0.1 at 2012-03-27 00:30:06 -0700
+Served asset /combat_logs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-03-27 00:30:06 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-03-27 00:30:06 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-03-27 00:30:06 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-03-27 00:30:06 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/combat_logs.js?body=1" for 127.0.0.1 at 2012-03-27 00:30:06 -0700
+Served asset /combat_logs.js - 304 Not Modified (0ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (2.9ms)[0m  [1mCREATE TABLE "combat_logs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "file_file_name" varchar(255), "file_content_type" varchar(255), "file_file_size" integer, "file_updated_at" datetime) [0m
+  [1m[35m (2.1ms)[0m  CREATE TABLE "entities" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "total_damage" integer, "player" boolean, "total_healing" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "combat_log_id" integer, "max_damage" varchar(255), "max_healing" varchar(255)) 
+  [1m[36m (1.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (1.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.0ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120327070235')[0m
+  [1m[35m (1.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120325220927')
+  [1m[36m (1.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120326023959')[0m
+  [1m[35m (1.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120326025815')
+  [1m[36m (1.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120326063036')[0m
+  [1m[35m (2.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120326070606')
+  [1m[36m (1.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120327063533')[0m
+  [1m[35m (1.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120327064401')
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (4.0ms)[0m  [1mCREATE TABLE "combat_logs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "file_file_name" varchar(255), "file_content_type" varchar(255), "file_file_size" integer, "file_updated_at" datetime) [0m
+  [1m[35m (1.5ms)[0m  CREATE TABLE "entities" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "total_damage" integer, "player" boolean, "total_healing" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "combat_log_id" integer, "max_damage" varchar(255), "max_healing" varchar(255)) 
+  [1m[36m (1.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (1.6ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.0ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120327070235')[0m
+  [1m[35m (1.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120325220927')
+  [1m[36m (1.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120326023959')[0m
+  [1m[35m (1.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120326025815')
+  [1m[36m (1.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120326063036')[0m
+  [1m[35m (1.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120326070606')
+  [1m[36m (1.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120327063533')[0m
+  [1m[35m (1.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120327064401')
