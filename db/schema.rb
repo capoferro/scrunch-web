@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120326070606) do
+ActiveRecord::Schema.define(:version => 20120327064401) do
 
   create_table "combat_logs", :force => true do |t|
     t.datetime "created_at",        :null => false
@@ -30,6 +30,8 @@ ActiveRecord::Schema.define(:version => 20120326070606) do
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
     t.integer  "combat_log_id"
+    t.integer  "max_damage"
+    t.integer  "max_healing"
   end
 
 end

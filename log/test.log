@@ -8469,3 +8469,556 @@ Completed 302 Found in 5ms (ActiveRecord: 0.2ms)
   [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
   [1m[35m (0.0ms)[0m  begin transaction
   [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+
+
+Started GET "/" for 127.0.0.1 at 2012-03-26 23:30:46 -0700
+Processing by CombatLogsController#new as HTML
+  Rendered combat_logs/_form.html.haml (3.6ms)
+  Rendered combat_logs/new.html.haml within layouts/application (15.4ms)
+Completed 200 OK in 66ms (Views: 61.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/combat_logs" for 127.0.0.1 at 2012-03-26 23:30:46 -0700
+Processing by CombatLogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "combat_log"=>{"file"=>#<ActionDispatch::Http::UploadedFile:0x00000102dc32c0 @original_filename="Ahri-vs-ForgeGuardian.txt", @content_type="text/plain", @headers="Content-Disposition: form-data; name=\"combat_log[file]\"; filename=\"Ahri-vs-ForgeGuardian.txt\"\r\nContent-Type: text/plain\r\nContent-Length: 55294\r\n", @tempfile=#<File:/var/folders/Z-/Z-uObbvZH3iiShMl6LC3FU+++TM/-Tmp-/RackMultipart20120326-20515-198cfkc>>}, "commit"=>"Upload"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+Binary data inserted for `string` type on column `file_content_type`
+  [1m[36mSQL (18.3ms)[0m  [1mINSERT INTO "combat_logs" ("created_at", "file_content_type", "file_file_name", "file_file_size", "file_updated_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Tue, 27 Mar 2012 06:30:46 UTC +00:00], ["file_content_type", "text/plain"], ["file_file_name", "Ahri-vs-ForgeGuardian.txt"], ["file_file_size", 55294], ["file_updated_at", Tue, 27 Mar 2012 06:30:46 UTC +00:00], ["updated_at", Tue, 27 Mar 2012 06:30:46 UTC +00:00]]
+[paperclip] Saving attachments.
+[paperclip] saving /Users/jkiehl/Adventures/scrunch-web/public/system/files/1/original/Ahri-vs-ForgeGuardian.txt
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mEntity Load (0.1ms)[0m  [1mSELECT "entities".* FROM "entities" WHERE "entities"."combat_log_id" = 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "entities" ("combat_log_id", "created_at", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["combat_log_id", 1], ["created_at", Tue, 27 Mar 2012 06:30:46 UTC +00:00], ["name", "Ahri"], ["player", true], ["total_damage", 2825], ["total_healing", 815], ["updated_at", Tue, 27 Mar 2012 06:30:46 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "entities" ("combat_log_id", "created_at", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["combat_log_id", 1], ["created_at", Tue, 27 Mar 2012 06:30:46 UTC +00:00], ["name", "Ahri:T7-O1"], ["player", true], ["total_damage", 859], ["total_healing", 0], ["updated_at", Tue, 27 Mar 2012 06:30:46 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "entities" ("combat_log_id", "created_at", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["combat_log_id", 1], ["created_at", Tue, 27 Mar 2012 06:30:46 UTC +00:00], ["name", "Forge Guardian"], ["player", false], ["total_damage", 3122], ["total_healing", 0], ["updated_at", Tue, 27 Mar 2012 06:30:46 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/combat_logs/1
+Completed 302 Found in 176ms (ActiveRecord: 19.2ms)
+
+
+Started GET "/combat_logs/1" for 127.0.0.1 at 2012-03-26 23:30:46 -0700
+Processing by CombatLogsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCombatLog Load (0.1ms)[0m  [1mSELECT "combat_logs".* FROM "combat_logs" WHERE "combat_logs"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mEntity Load (0.1ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."combat_log_id" = 1
+  Rendered combat_logs/_entity_row.html.haml (1.3ms)
+  Rendered combat_logs/_entity_row.html.haml (0.1ms)
+  Rendered combat_logs/show.html.haml within layouts/application (5.9ms)
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 0.2ms)
+  [1m[36m (1.4ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+
+
+Started GET "/" for 127.0.0.1 at 2012-03-26 23:31:36 -0700
+Processing by CombatLogsController#new as HTML
+  Rendered combat_logs/_form.html.haml (3.7ms)
+  Rendered combat_logs/new.html.haml within layouts/application (15.6ms)
+Completed 200 OK in 71ms (Views: 66.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/combat_logs" for 127.0.0.1 at 2012-03-26 23:31:36 -0700
+Processing by CombatLogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "combat_log"=>{"file"=>#<ActionDispatch::Http::UploadedFile:0x00000102ac2378 @original_filename="Ahri-vs-ForgeGuardian.txt", @content_type="text/plain", @headers="Content-Disposition: form-data; name=\"combat_log[file]\"; filename=\"Ahri-vs-ForgeGuardian.txt\"\r\nContent-Type: text/plain\r\nContent-Length: 55294\r\n", @tempfile=#<File:/var/folders/Z-/Z-uObbvZH3iiShMl6LC3FU+++TM/-Tmp-/RackMultipart20120326-20569-1c7gl9c>>}, "commit"=>"Upload"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+Binary data inserted for `string` type on column `file_content_type`
+  [1m[36mSQL (18.4ms)[0m  [1mINSERT INTO "combat_logs" ("created_at", "file_content_type", "file_file_name", "file_file_size", "file_updated_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Tue, 27 Mar 2012 06:31:36 UTC +00:00], ["file_content_type", "text/plain"], ["file_file_name", "Ahri-vs-ForgeGuardian.txt"], ["file_file_size", 55294], ["file_updated_at", Tue, 27 Mar 2012 06:31:36 UTC +00:00], ["updated_at", Tue, 27 Mar 2012 06:31:36 UTC +00:00]]
+[paperclip] Saving attachments.
+[paperclip] saving /Users/jkiehl/Adventures/scrunch-web/public/system/files/1/original/Ahri-vs-ForgeGuardian.txt
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mEntity Load (0.1ms)[0m  [1mSELECT "entities".* FROM "entities" WHERE "entities"."combat_log_id" = 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "entities" ("combat_log_id", "created_at", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["combat_log_id", 1], ["created_at", Tue, 27 Mar 2012 06:31:36 UTC +00:00], ["name", "Ahri"], ["player", true], ["total_damage", 2825], ["total_healing", 815], ["updated_at", Tue, 27 Mar 2012 06:31:36 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "entities" ("combat_log_id", "created_at", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["combat_log_id", 1], ["created_at", Tue, 27 Mar 2012 06:31:36 UTC +00:00], ["name", "Ahri:T7-O1"], ["player", true], ["total_damage", 859], ["total_healing", 0], ["updated_at", Tue, 27 Mar 2012 06:31:36 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "entities" ("combat_log_id", "created_at", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["combat_log_id", 1], ["created_at", Tue, 27 Mar 2012 06:31:36 UTC +00:00], ["name", "Forge Guardian"], ["player", false], ["total_damage", 3122], ["total_healing", 0], ["updated_at", Tue, 27 Mar 2012 06:31:36 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/combat_logs/1
+Completed 302 Found in 181ms (ActiveRecord: 19.4ms)
+
+
+Started GET "/combat_logs/1" for 127.0.0.1 at 2012-03-26 23:31:36 -0700
+Processing by CombatLogsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCombatLog Load (0.1ms)[0m  [1mSELECT "combat_logs".* FROM "combat_logs" WHERE "combat_logs"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mEntity Load (0.1ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."combat_log_id" = 1
+  Rendered combat_logs/_entity_row.html.haml (1.3ms)
+  Rendered combat_logs/_entity_row.html.haml (0.1ms)
+  Rendered combat_logs/show.html.haml within layouts/application (6.0ms)
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.2ms)
+  [1m[36m (1.4ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+
+
+Started GET "/" for 127.0.0.1 at 2012-03-26 23:33:20 -0700
+Processing by CombatLogsController#new as HTML
+  Rendered combat_logs/_form.html.haml (3.5ms)
+  Rendered combat_logs/new.html.haml within layouts/application (14.5ms)
+Completed 200 OK in 63ms (Views: 57.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/combat_logs" for 127.0.0.1 at 2012-03-26 23:33:20 -0700
+Processing by CombatLogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "combat_log"=>{"file"=>#<ActionDispatch::Http::UploadedFile:0x00000102eec3b8 @original_filename="Ahri-vs-ForgeGuardian.txt", @content_type="text/plain", @headers="Content-Disposition: form-data; name=\"combat_log[file]\"; filename=\"Ahri-vs-ForgeGuardian.txt\"\r\nContent-Type: text/plain\r\nContent-Length: 55294\r\n", @tempfile=#<File:/var/folders/Z-/Z-uObbvZH3iiShMl6LC3FU+++TM/-Tmp-/RackMultipart20120326-20603-4csdgr>>}, "commit"=>"Upload"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+Binary data inserted for `string` type on column `file_content_type`
+  [1m[36mSQL (17.5ms)[0m  [1mINSERT INTO "combat_logs" ("created_at", "file_content_type", "file_file_name", "file_file_size", "file_updated_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Tue, 27 Mar 2012 06:33:20 UTC +00:00], ["file_content_type", "text/plain"], ["file_file_name", "Ahri-vs-ForgeGuardian.txt"], ["file_file_size", 55294], ["file_updated_at", Tue, 27 Mar 2012 06:33:20 UTC +00:00], ["updated_at", Tue, 27 Mar 2012 06:33:20 UTC +00:00]]
+[paperclip] Saving attachments.
+[paperclip] saving /Users/jkiehl/Adventures/scrunch-web/public/system/files/1/original/Ahri-vs-ForgeGuardian.txt
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mEntity Load (0.1ms)[0m  [1mSELECT "entities".* FROM "entities" WHERE "entities"."combat_log_id" = 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "entities" ("combat_log_id", "created_at", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["combat_log_id", 1], ["created_at", Tue, 27 Mar 2012 06:33:21 UTC +00:00], ["name", "Ahri"], ["player", true], ["total_damage", 2825], ["total_healing", 815], ["updated_at", Tue, 27 Mar 2012 06:33:21 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "entities" ("combat_log_id", "created_at", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["combat_log_id", 1], ["created_at", Tue, 27 Mar 2012 06:33:21 UTC +00:00], ["name", "Ahri:T7-O1"], ["player", true], ["total_damage", 859], ["total_healing", 0], ["updated_at", Tue, 27 Mar 2012 06:33:21 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "entities" ("combat_log_id", "created_at", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["combat_log_id", 1], ["created_at", Tue, 27 Mar 2012 06:33:21 UTC +00:00], ["name", "Forge Guardian"], ["player", false], ["total_damage", 3122], ["total_healing", 0], ["updated_at", Tue, 27 Mar 2012 06:33:21 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/combat_logs/1
+Completed 302 Found in 176ms (ActiveRecord: 18.5ms)
+
+
+Started GET "/combat_logs/1" for 127.0.0.1 at 2012-03-26 23:33:21 -0700
+Processing by CombatLogsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCombatLog Load (0.1ms)[0m  [1mSELECT "combat_logs".* FROM "combat_logs" WHERE "combat_logs"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mEntity Load (0.1ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."combat_log_id" = 1
+  Rendered combat_logs/_entity_row.html.haml (1.5ms)
+  Rendered combat_logs/_entity_row.html.haml (0.2ms)
+  Rendered combat_logs/show.html.haml within layouts/application (6.8ms)
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.2ms)
+  [1m[36m (1.4ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (17.1ms)[0m  [1mINSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["combat_log_id", nil], ["created_at", Tue, 27 Mar 2012 06:37:23 UTC +00:00], ["max_damage", nil], ["name", "*unknown*"], ["player", false], ["total_damage", nil], ["total_healing", nil], ["updated_at", Tue, 27 Mar 2012 06:37:23 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["combat_log_id", nil], ["created_at", Tue, 27 Mar 2012 06:37:23 UTC +00:00], ["max_damage", nil], ["name", "*unknown*"], ["player", false], ["total_damage", nil], ["total_healing", nil], ["updated_at", Tue, 27 Mar 2012 06:37:23 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["combat_log_id", nil], ["created_at", Tue, 27 Mar 2012 06:37:23 UTC +00:00], ["max_damage", nil], ["name", "*unknown*"], ["player", false], ["total_damage", nil], ["total_healing", nil], ["updated_at", Tue, 27 Mar 2012 06:37:23 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["combat_log_id", nil], ["created_at", Tue, 27 Mar 2012 06:37:23 UTC +00:00], ["max_damage", nil], ["name", "Ahri"], ["player", true], ["total_damage", nil], ["total_healing", nil], ["updated_at", Tue, 27 Mar 2012 06:37:23 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["combat_log_id", nil], ["created_at", Tue, 27 Mar 2012 06:37:23 UTC +00:00], ["max_damage", nil], ["name", "Ahri"], ["player", true], ["total_damage", nil], ["total_healing", nil], ["updated_at", Tue, 27 Mar 2012 06:37:23 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.9ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["combat_log_id", nil], ["created_at", Tue, 27 Mar 2012 06:37:23 UTC +00:00], ["max_damage", nil], ["name", "Ahri"], ["player", true], ["total_damage", nil], ["total_healing", nil], ["updated_at", Tue, 27 Mar 2012 06:37:23 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (16.9ms)[0m  [1mINSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["combat_log_id", nil], ["created_at", Tue, 27 Mar 2012 06:39:43 UTC +00:00], ["max_damage", nil], ["name", "*unknown*"], ["player", false], ["total_damage", nil], ["total_healing", nil], ["updated_at", Tue, 27 Mar 2012 06:39:43 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["combat_log_id", nil], ["created_at", Tue, 27 Mar 2012 06:39:43 UTC +00:00], ["max_damage", nil], ["name", "*unknown*"], ["player", false], ["total_damage", nil], ["total_healing", nil], ["updated_at", Tue, 27 Mar 2012 06:39:43 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["combat_log_id", nil], ["created_at", Tue, 27 Mar 2012 06:39:43 UTC +00:00], ["max_damage", nil], ["name", "*unknown*"], ["player", false], ["total_damage", nil], ["total_healing", nil], ["updated_at", Tue, 27 Mar 2012 06:39:43 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["combat_log_id", nil], ["created_at", Tue, 27 Mar 2012 06:39:43 UTC +00:00], ["max_damage", nil], ["name", "Ahri"], ["player", true], ["total_damage", nil], ["total_healing", nil], ["updated_at", Tue, 27 Mar 2012 06:39:43 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["combat_log_id", nil], ["created_at", Tue, 27 Mar 2012 06:39:43 UTC +00:00], ["max_damage", nil], ["name", "Ahri"], ["player", true], ["total_damage", nil], ["total_healing", nil], ["updated_at", Tue, 27 Mar 2012 06:39:43 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["combat_log_id", nil], ["created_at", Tue, 27 Mar 2012 06:39:43 UTC +00:00], ["max_damage", nil], ["name", "Ahri"], ["player", true], ["total_damage", nil], ["total_healing", nil], ["updated_at", Tue, 27 Mar 2012 06:39:43 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (16.8ms)[0m  [1mINSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["combat_log_id", nil], ["created_at", Tue, 27 Mar 2012 06:40:18 UTC +00:00], ["max_damage", nil], ["name", "*unknown*"], ["player", false], ["total_damage", nil], ["total_healing", nil], ["updated_at", Tue, 27 Mar 2012 06:40:18 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["combat_log_id", nil], ["created_at", Tue, 27 Mar 2012 06:40:18 UTC +00:00], ["max_damage", nil], ["name", "*unknown*"], ["player", false], ["total_damage", nil], ["total_healing", nil], ["updated_at", Tue, 27 Mar 2012 06:40:18 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["combat_log_id", nil], ["created_at", Tue, 27 Mar 2012 06:40:18 UTC +00:00], ["max_damage", nil], ["name", "*unknown*"], ["player", false], ["total_damage", nil], ["total_healing", nil], ["updated_at", Tue, 27 Mar 2012 06:40:18 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["combat_log_id", nil], ["created_at", Tue, 27 Mar 2012 06:40:18 UTC +00:00], ["max_damage", nil], ["name", "Ahri"], ["player", true], ["total_damage", nil], ["total_healing", nil], ["updated_at", Tue, 27 Mar 2012 06:40:18 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["combat_log_id", nil], ["created_at", Tue, 27 Mar 2012 06:40:18 UTC +00:00], ["max_damage", nil], ["name", "Ahri"], ["player", true], ["total_damage", nil], ["total_healing", nil], ["updated_at", Tue, 27 Mar 2012 06:40:18 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["combat_log_id", nil], ["created_at", Tue, 27 Mar 2012 06:40:18 UTC +00:00], ["max_damage", nil], ["name", "Ahri"], ["player", true], ["total_damage", nil], ["total_healing", nil], ["updated_at", Tue, 27 Mar 2012 06:40:18 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (18.2ms)[0m  [1mINSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["combat_log_id", nil], ["created_at", Tue, 27 Mar 2012 06:41:38 UTC +00:00], ["max_damage", nil], ["name", "*unknown*"], ["player", false], ["total_damage", nil], ["total_healing", nil], ["updated_at", Tue, 27 Mar 2012 06:41:38 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["combat_log_id", nil], ["created_at", Tue, 27 Mar 2012 06:41:38 UTC +00:00], ["max_damage", nil], ["name", "*unknown*"], ["player", false], ["total_damage", nil], ["total_healing", nil], ["updated_at", Tue, 27 Mar 2012 06:41:38 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["combat_log_id", nil], ["created_at", Tue, 27 Mar 2012 06:41:38 UTC +00:00], ["max_damage", nil], ["name", "*unknown*"], ["player", false], ["total_damage", nil], ["total_healing", nil], ["updated_at", Tue, 27 Mar 2012 06:41:38 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["combat_log_id", nil], ["created_at", Tue, 27 Mar 2012 06:41:38 UTC +00:00], ["max_damage", nil], ["name", "Ahri"], ["player", true], ["total_damage", nil], ["total_healing", nil], ["updated_at", Tue, 27 Mar 2012 06:41:38 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["combat_log_id", nil], ["created_at", Tue, 27 Mar 2012 06:41:38 UTC +00:00], ["max_damage", nil], ["name", "Ahri"], ["player", true], ["total_damage", nil], ["total_healing", nil], ["updated_at", Tue, 27 Mar 2012 06:41:38 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["combat_log_id", nil], ["created_at", Tue, 27 Mar 2012 06:41:38 UTC +00:00], ["max_damage", nil], ["name", "Ahri"], ["player", true], ["total_damage", nil], ["total_healing", nil], ["updated_at", Tue, 27 Mar 2012 06:41:38 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (17.2ms)[0m  [1mINSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "max_healing", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["combat_log_id", nil], ["created_at", Tue, 27 Mar 2012 06:44:22 UTC +00:00], ["max_damage", 0], ["max_healing", 0], ["name", "*unknown*"], ["player", false], ["total_damage", 0], ["total_healing", 0], ["updated_at", Tue, 27 Mar 2012 06:44:22 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "max_healing", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["combat_log_id", nil], ["created_at", Tue, 27 Mar 2012 06:44:22 UTC +00:00], ["max_damage", 0], ["max_healing", 0], ["name", "*unknown*"], ["player", false], ["total_damage", 0], ["total_healing", 0], ["updated_at", Tue, 27 Mar 2012 06:44:22 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "max_healing", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["combat_log_id", nil], ["created_at", Tue, 27 Mar 2012 06:44:22 UTC +00:00], ["max_damage", 0], ["max_healing", 0], ["name", "*unknown*"], ["player", false], ["total_damage", 0], ["total_healing", 0], ["updated_at", Tue, 27 Mar 2012 06:44:22 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "max_healing", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["combat_log_id", nil], ["created_at", Tue, 27 Mar 2012 06:44:22 UTC +00:00], ["max_damage", 0], ["max_healing", 0], ["name", "Ahri"], ["player", true], ["total_damage", 0], ["total_healing", 0], ["updated_at", Tue, 27 Mar 2012 06:44:22 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "max_healing", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["combat_log_id", nil], ["created_at", Tue, 27 Mar 2012 06:44:22 UTC +00:00], ["max_damage", 0], ["max_healing", 0], ["name", "Ahri"], ["player", true], ["total_damage", 0], ["total_healing", 0], ["updated_at", Tue, 27 Mar 2012 06:44:22 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "max_healing", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["combat_log_id", nil], ["created_at", Tue, 27 Mar 2012 06:44:22 UTC +00:00], ["max_damage", 0], ["max_healing", 0], ["name", "Ahri"], ["player", true], ["total_damage", 0], ["total_healing", 0], ["updated_at", Tue, 27 Mar 2012 06:44:22 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (16.8ms)[0m  [1mINSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "max_healing", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["combat_log_id", nil], ["created_at", Tue, 27 Mar 2012 06:44:52 UTC +00:00], ["max_damage", 0], ["max_healing", 0], ["name", "*unknown*"], ["player", false], ["total_damage", 0], ["total_healing", 0], ["updated_at", Tue, 27 Mar 2012 06:44:52 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "max_healing", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["combat_log_id", nil], ["created_at", Tue, 27 Mar 2012 06:44:52 UTC +00:00], ["max_damage", 0], ["max_healing", 0], ["name", "*unknown*"], ["player", false], ["total_damage", 0], ["total_healing", 0], ["updated_at", Tue, 27 Mar 2012 06:44:52 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "max_healing", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["combat_log_id", nil], ["created_at", Tue, 27 Mar 2012 06:44:52 UTC +00:00], ["max_damage", 0], ["max_healing", 0], ["name", "*unknown*"], ["player", false], ["total_damage", 0], ["total_healing", 0], ["updated_at", Tue, 27 Mar 2012 06:44:52 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "max_healing", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["combat_log_id", nil], ["created_at", Tue, 27 Mar 2012 06:44:52 UTC +00:00], ["max_damage", 0], ["max_healing", 0], ["name", "Ahri"], ["player", true], ["total_damage", 0], ["total_healing", 0], ["updated_at", Tue, 27 Mar 2012 06:44:52 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "max_healing", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["combat_log_id", nil], ["created_at", Tue, 27 Mar 2012 06:44:52 UTC +00:00], ["max_damage", 0], ["max_healing", 0], ["name", "Ahri"], ["player", true], ["total_damage", 0], ["total_healing", 0], ["updated_at", Tue, 27 Mar 2012 06:44:52 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "max_healing", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["combat_log_id", nil], ["created_at", Tue, 27 Mar 2012 06:44:52 UTC +00:00], ["max_damage", 0], ["max_healing", 0], ["name", "Ahri"], ["player", true], ["total_damage", 0], ["total_healing", 0], ["updated_at", Tue, 27 Mar 2012 06:44:52 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+[32mCommand[0m :: file -b --mime '/var/folders/Z-/Z-uObbvZH3iiShMl6LC3FU+++TM/-Tmp-/combat_log.txt20120326-23031-qm0bgf'
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (21.3ms)[0m  [1mINSERT INTO "combat_logs" ("created_at", "file_content_type", "file_file_name", "file_file_size", "file_updated_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Tue, 27 Mar 2012 06:45:13 UTC +00:00], ["file_content_type", "application/x-empty"], ["file_file_name", "combat_log.txt20120326-23031-qm0bgf"], ["file_file_size", 0], ["file_updated_at", Tue, 27 Mar 2012 06:45:13 UTC +00:00], ["updated_at", Tue, 27 Mar 2012 06:45:13 UTC +00:00]]
+[paperclip] Saving attachments.
+[paperclip] saving /Users/jkiehl/Adventures/scrunch-web/public/system/files/1/original/combat_log.txt20120326-23031-qm0bgf
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by CombatLogsController#index as HTML
+  [1m[36mCombatLog Load (0.1ms)[0m  [1mSELECT "combat_logs".* FROM "combat_logs" [0m
+  Rendered combat_logs/index.html.haml within layouts/application (0.7ms)
+Completed 200 OK in 45ms (Views: 43.1ms | ActiveRecord: 0.1ms)
+  [1m[35m (1.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+[32mCommand[0m :: file -b --mime '/var/folders/Z-/Z-uObbvZH3iiShMl6LC3FU+++TM/-Tmp-/combat_log.txt20120326-23031-lsb3mw'
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "combat_logs" ("created_at", "file_content_type", "file_file_name", "file_file_size", "file_updated_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Tue, 27 Mar 2012 06:45:14 UTC +00:00], ["file_content_type", "application/x-empty"], ["file_file_name", "combat_log.txt20120326-23031-lsb3mw"], ["file_file_size", 0], ["file_updated_at", Tue, 27 Mar 2012 06:45:14 UTC +00:00], ["updated_at", Tue, 27 Mar 2012 06:45:14 UTC +00:00]]
+[paperclip] Saving attachments.
+[paperclip] saving /Users/jkiehl/Adventures/scrunch-web/public/system/files/1/original/combat_log.txt20120326-23031-lsb3mw
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by CombatLogsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCombatLog Load (0.1ms)[0m  [1mSELECT "combat_logs".* FROM "combat_logs" WHERE "combat_logs"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Completed 200 OK in 5ms (Views: 2.4ms | ActiveRecord: 0.1ms)
+  [1m[35m (1.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by CombatLogsController#new as HTML
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "combat_logs" 
+Processing by CombatLogsController#create as HTML
+  Parameters: {"combat_log"=>{"file"=>"#<File:0x000001026aada8>"}}
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "combat_logs" ("created_at", "file_content_type", "file_file_name", "file_file_size", "file_updated_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Tue, 27 Mar 2012 06:45:14 UTC +00:00], ["file_content_type", nil], ["file_file_name", nil], ["file_file_size", nil], ["file_updated_at", nil], ["updated_at", Tue, 27 Mar 2012 06:45:14 UTC +00:00]]
+[paperclip] Saving attachments.
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mEntity Load (0.1ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."combat_log_id" = 1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "max_healing", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["combat_log_id", 1], ["created_at", Tue, 27 Mar 2012 06:45:14 UTC +00:00], ["max_damage", 193], ["max_healing", 423], ["name", "Ahri"], ["player", true], ["total_damage", 2825], ["total_healing", 815], ["updated_at", Tue, 27 Mar 2012 06:45:14 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "max_healing", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["combat_log_id", 1], ["created_at", Tue, 27 Mar 2012 06:45:14 UTC +00:00], ["max_damage", 52], ["max_healing", 0], ["name", "Ahri:T7-O1"], ["player", true], ["total_damage", 859], ["total_healing", 0], ["updated_at", Tue, 27 Mar 2012 06:45:14 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "max_healing", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["combat_log_id", 1], ["created_at", Tue, 27 Mar 2012 06:45:14 UTC +00:00], ["max_damage", 156], ["max_healing", 0], ["name", "Forge Guardian"], ["player", false], ["total_damage", 3122], ["total_healing", 0], ["updated_at", Tue, 27 Mar 2012 06:45:14 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/combat_logs/1
+Completed 302 Found in 131ms (ActiveRecord: 1.4ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "combat_logs" 
+  [1m[36m (1.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by CombatLogsController#create as HTML
+  Parameters: {"combat_log"=>{"file"=>"#<File:0x0000012a4f99c8>"}}
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "combat_logs" ("created_at", "file_content_type", "file_file_name", "file_file_size", "file_updated_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Tue, 27 Mar 2012 06:45:14 UTC +00:00], ["file_content_type", nil], ["file_file_name", nil], ["file_file_size", nil], ["file_updated_at", nil], ["updated_at", Tue, 27 Mar 2012 06:45:14 UTC +00:00]]
+[paperclip] Saving attachments.
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mEntity Load (0.1ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."combat_log_id" = 1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "max_healing", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["combat_log_id", 1], ["created_at", Tue, 27 Mar 2012 06:45:14 UTC +00:00], ["max_damage", 193], ["max_healing", 423], ["name", "Ahri"], ["player", true], ["total_damage", 2825], ["total_healing", 815], ["updated_at", Tue, 27 Mar 2012 06:45:14 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "max_healing", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["combat_log_id", 1], ["created_at", Tue, 27 Mar 2012 06:45:14 UTC +00:00], ["max_damage", 52], ["max_healing", 0], ["name", "Ahri:T7-O1"], ["player", true], ["total_damage", 859], ["total_healing", 0], ["updated_at", Tue, 27 Mar 2012 06:45:14 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "max_healing", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["combat_log_id", 1], ["created_at", Tue, 27 Mar 2012 06:45:14 UTC +00:00], ["max_damage", 156], ["max_healing", 0], ["name", "Forge Guardian"], ["player", false], ["total_damage", 3122], ["total_healing", 0], ["updated_at", Tue, 27 Mar 2012 06:45:14 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/combat_logs/1
+Completed 302 Found in 15ms (ActiveRecord: 1.2ms)
+  [1m[35m (1.6ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by CombatLogsController#create as HTML
+  Parameters: {"combat_log"=>{"file"=>"#<File:0x000001025f5a98>"}}
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "combat_logs" ("created_at", "file_content_type", "file_file_name", "file_file_size", "file_updated_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Tue, 27 Mar 2012 06:45:14 UTC +00:00], ["file_content_type", nil], ["file_file_name", nil], ["file_file_size", nil], ["file_updated_at", nil], ["updated_at", Tue, 27 Mar 2012 06:45:14 UTC +00:00]]
+[paperclip] Saving attachments.
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mEntity Load (0.1ms)[0m  [1mSELECT "entities".* FROM "entities" WHERE "entities"."combat_log_id" = 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "max_healing", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["combat_log_id", 1], ["created_at", Tue, 27 Mar 2012 06:45:14 UTC +00:00], ["max_damage", 193], ["max_healing", 423], ["name", "Ahri"], ["player", true], ["total_damage", 2825], ["total_healing", 815], ["updated_at", Tue, 27 Mar 2012 06:45:14 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "max_healing", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["combat_log_id", 1], ["created_at", Tue, 27 Mar 2012 06:45:14 UTC +00:00], ["max_damage", 52], ["max_healing", 0], ["name", "Ahri:T7-O1"], ["player", true], ["total_damage", 859], ["total_healing", 0], ["updated_at", Tue, 27 Mar 2012 06:45:14 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "max_healing", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["combat_log_id", 1], ["created_at", Tue, 27 Mar 2012 06:45:14 UTC +00:00], ["max_damage", 156], ["max_healing", 0], ["name", "Forge Guardian"], ["player", false], ["total_damage", 3122], ["total_healing", 0], ["updated_at", Tue, 27 Mar 2012 06:45:14 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/combat_logs/1
+Completed 302 Found in 14ms (ActiveRecord: 1.0ms)
+  [1m[36mCombatLog Load (0.1ms)[0m  [1mSELECT "combat_logs".* FROM "combat_logs" ORDER BY "combat_logs"."id" DESC LIMIT 1[0m
+  [1m[35m (1.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by CombatLogsController#create as HTML
+  Parameters: {"combat_log"=>{}}
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by CombatLogsController#create as HTML
+  Parameters: {"combat_log"=>{}}
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+[32mCommand[0m :: file -b --mime '/var/folders/Z-/Z-uObbvZH3iiShMl6LC3FU+++TM/-Tmp-/combat_log.txt20120326-23031-1lflox5'
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "combat_logs" ("created_at", "file_content_type", "file_file_name", "file_file_size", "file_updated_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Tue, 27 Mar 2012 06:45:14 UTC +00:00], ["file_content_type", "application/x-empty"], ["file_file_name", "combat_log.txt20120326-23031-1lflox5"], ["file_file_size", 0], ["file_updated_at", Tue, 27 Mar 2012 06:45:14 UTC +00:00], ["updated_at", Tue, 27 Mar 2012 06:45:14 UTC +00:00]]
+[paperclip] Saving attachments.
+[paperclip] saving /Users/jkiehl/Adventures/scrunch-web/public/system/files/1/original/combat_log.txt20120326-23031-1lflox5
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "combat_logs" [0m
+Processing by CombatLogsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCombatLog Load (0.1ms)[0m  SELECT "combat_logs".* FROM "combat_logs" WHERE "combat_logs"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+[paperclip] Scheduling attachments for deletion.
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "combat_logs" WHERE "combat_logs"."id" = ?  [["id", 1]]
+[paperclip] Deleting attachments.
+[paperclip] deleting /Users/jkiehl/Adventures/scrunch-web/public/system/files/1/original/combat_log.txt20120326-23031-1lflox5
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/combat_logs
+Completed 302 Found in 6ms (ActiveRecord: 0.3ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "combat_logs" 
+  [1m[36m (1.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+[32mCommand[0m :: file -b --mime '/var/folders/Z-/Z-uObbvZH3iiShMl6LC3FU+++TM/-Tmp-/combat_log.txt20120326-23031-rgez1o'
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "combat_logs" ("created_at", "file_content_type", "file_file_name", "file_file_size", "file_updated_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Tue, 27 Mar 2012 06:45:14 UTC +00:00], ["file_content_type", "application/x-empty"], ["file_file_name", "combat_log.txt20120326-23031-rgez1o"], ["file_file_size", 0], ["file_updated_at", Tue, 27 Mar 2012 06:45:14 UTC +00:00], ["updated_at", Tue, 27 Mar 2012 06:45:14 UTC +00:00]]
+[paperclip] Saving attachments.
+[paperclip] saving /Users/jkiehl/Adventures/scrunch-web/public/system/files/1/original/combat_log.txt20120326-23031-rgez1o
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by CombatLogsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCombatLog Load (0.1ms)[0m  SELECT "combat_logs".* FROM "combat_logs" WHERE "combat_logs"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+[paperclip] Scheduling attachments for deletion.
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "combat_logs" WHERE "combat_logs"."id" = ?  [["id", 1]]
+[paperclip] Deleting attachments.
+[paperclip] deleting /Users/jkiehl/Adventures/scrunch-web/public/system/files/1/original/combat_log.txt20120326-23031-rgez1o
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/combat_logs
+Completed 302 Found in 54ms (ActiveRecord: 0.2ms)
+  [1m[35m (1.5ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "combat_logs" ("created_at", "file_content_type", "file_file_name", "file_file_size", "file_updated_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Tue, 27 Mar 2012 06:45:14 UTC +00:00], ["file_content_type", "text/plain"], ["file_file_name", "Ahri-vs-ForgeGuardian.txt"], ["file_file_size", 55294], ["file_updated_at", Tue, 27 Mar 2012 06:45:14 UTC +00:00], ["updated_at", Tue, 27 Mar 2012 06:45:14 UTC +00:00]]
+[paperclip] Saving attachments.
+[paperclip] saving /Users/jkiehl/Adventures/scrunch-web/public/system/files/1/original/Ahri-vs-ForgeGuardian.txt
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mEntity Load (0.1ms)[0m  [1mSELECT "entities".* FROM "entities" WHERE "entities"."combat_log_id" = 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "max_healing", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["combat_log_id", 1], ["created_at", Tue, 27 Mar 2012 06:45:14 UTC +00:00], ["max_damage", 193], ["max_healing", 423], ["name", "Ahri"], ["player", true], ["total_damage", 2825], ["total_healing", 815], ["updated_at", Tue, 27 Mar 2012 06:45:14 UTC +00:00]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "max_healing", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["combat_log_id", 1], ["created_at", Tue, 27 Mar 2012 06:45:14 UTC +00:00], ["max_damage", 52], ["max_healing", 0], ["name", "Ahri:T7-O1"], ["player", true], ["total_damage", 859], ["total_healing", 0], ["updated_at", Tue, 27 Mar 2012 06:45:14 UTC +00:00]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "max_healing", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["combat_log_id", 1], ["created_at", Tue, 27 Mar 2012 06:45:14 UTC +00:00], ["max_damage", 156], ["max_healing", 0], ["name", "Forge Guardian"], ["player", false], ["total_damage", 3122], ["total_healing", 0], ["updated_at", Tue, 27 Mar 2012 06:45:14 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "combat_logs" ("created_at", "file_content_type", "file_file_name", "file_file_size", "file_updated_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Tue, 27 Mar 2012 06:45:14 UTC +00:00], ["file_content_type", "text/plain"], ["file_file_name", "Ahri-vs-ForgeGuardian.txt"], ["file_file_size", 55294], ["file_updated_at", Tue, 27 Mar 2012 06:45:14 UTC +00:00], ["updated_at", Tue, 27 Mar 2012 06:45:14 UTC +00:00]]
+[paperclip] Saving attachments.
+[paperclip] saving /Users/jkiehl/Adventures/scrunch-web/public/system/files/1/original/Ahri-vs-ForgeGuardian.txt
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "combat_logs" ("created_at", "file_content_type", "file_file_name", "file_file_size", "file_updated_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Tue, 27 Mar 2012 06:45:14 UTC +00:00], ["file_content_type", "text/plain"], ["file_file_name", "Ahri-vs-ForgeGuardian.txt"], ["file_file_size", 55294], ["file_updated_at", Tue, 27 Mar 2012 06:45:14 UTC +00:00], ["updated_at", Tue, 27 Mar 2012 06:45:14 UTC +00:00]]
+[paperclip] Saving attachments.
+[paperclip] saving /Users/jkiehl/Adventures/scrunch-web/public/system/files/1/original/Ahri-vs-ForgeGuardian.txt
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "max_healing", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["combat_log_id", nil], ["created_at", Tue, 27 Mar 2012 06:45:14 UTC +00:00], ["max_damage", 0], ["max_healing", 0], ["name", "*unknown*"], ["player", false], ["total_damage", 0], ["total_healing", 0], ["updated_at", Tue, 27 Mar 2012 06:45:14 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "max_healing", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["combat_log_id", nil], ["created_at", Tue, 27 Mar 2012 06:45:14 UTC +00:00], ["max_damage", 0], ["max_healing", 0], ["name", "*unknown*"], ["player", false], ["total_damage", 0], ["total_healing", 0], ["updated_at", Tue, 27 Mar 2012 06:45:14 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "max_healing", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["combat_log_id", nil], ["created_at", Tue, 27 Mar 2012 06:45:14 UTC +00:00], ["max_damage", 0], ["max_healing", 0], ["name", "*unknown*"], ["player", false], ["total_damage", 0], ["total_healing", 0], ["updated_at", Tue, 27 Mar 2012 06:45:14 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "max_healing", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["combat_log_id", nil], ["created_at", Tue, 27 Mar 2012 06:45:14 UTC +00:00], ["max_damage", 0], ["max_healing", 0], ["name", "Ahri"], ["player", true], ["total_damage", 0], ["total_healing", 0], ["updated_at", Tue, 27 Mar 2012 06:45:14 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "max_healing", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["combat_log_id", nil], ["created_at", Tue, 27 Mar 2012 06:45:14 UTC +00:00], ["max_damage", 0], ["max_healing", 0], ["name", "Ahri"], ["player", true], ["total_damage", 0], ["total_healing", 0], ["updated_at", Tue, 27 Mar 2012 06:45:14 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.5ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "entities" ("combat_log_id", "created_at", "max_damage", "max_healing", "name", "player", "total_damage", "total_healing", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["combat_log_id", nil], ["created_at", Tue, 27 Mar 2012 06:45:14 UTC +00:00], ["max_damage", 0], ["max_healing", 0], ["name", "Ahri"], ["player", true], ["total_damage", 0], ["total_healing", 0], ["updated_at", Tue, 27 Mar 2012 06:45:14 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m

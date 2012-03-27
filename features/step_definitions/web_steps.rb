@@ -14,9 +14,45 @@ end
 
 Then /^I should see the results of that combat log in chart format$/ do
   @filename.should_not be_nil
-  step 'I should see "Ahri"'
-  step 'I should see "Forge Guardian"'
-  step 'I should see "Ahri:T7-O1"'
+  within('.entities.damage') do
+    within('.Ahri') do
+      page.should have_content 'Ahri'
+      page.should have_content '2825'
+      page.should have_content 'MAX SKILL: MAX DAMAGE'
+    end
+
+    within('.Forge_Guardian') do
+      page.should have_content 'Forge Guardian'
+      page.should have_content '3122'
+      page.should have_content 'MAX SKILL: MAX DAMAGE'
+    end
+
+    within('.Ahri_T7-O1') do
+      page.should have_content 'Ahri:T7-O1'
+      page.should have_content '859'
+      page.should have_content 'MAX SKILL: MAX DAMAGE'
+    end
+  end
+
+  within('#healing-table') do
+    within('.Ahri') do
+      page.should have_content 'Ahri'
+      page.should have_content '815'
+      page.should have_content 'MAX SKILL: MAX DAMAGE'
+    end
+
+    within('.Forge_Guardian') do
+      page.should have_content 'Forge Guardian'
+      page.should have_content '0'
+      page.should have_content 'MAX SKILL: MAX DAMAGE'
+    end
+
+    within('.Ahri_T7-O1') do
+      page.should have_content 'Ahri:T7-O1'
+      page.should have_content '0'
+      page.should have_content 'MAX SKILL: MAX DAMAGE'
+    end
+  end
 end
 
 And /^show me the page$/ do

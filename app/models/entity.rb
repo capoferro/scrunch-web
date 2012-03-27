@@ -4,7 +4,16 @@ class Entity < ActiveRecord::Base
 
   before_create :catch_blank_entity, :specify_player_or_npc
 
+  after_initialize :initialize_tracking_values
+
   (UNKNOWN_NAME = '*unknown*').freeze
+
+  def initialize_tracking_values
+    self.total_damage = 
+      self.total_healing = 
+      self.max_damage = 
+      self.max_healing = 0
+  end
 
   def catch_blank_entity
     self.name = UNKNOWN_NAME if self.name.blank?
@@ -25,9 +34,17 @@ class Entity < ActiveRecord::Base
 
   # Public: Takes in parsed results and adds to the appropriate metrics
   def add_effect_result(result)
-    self.total_damage ||= 0
-    self.total_healing ||= 0
-    self.total_damage += result[:effect][:damage][:amount] if result[:effect].keys.include? :damage
-    self.total_healing += result[:effect][:heal][:amount] if result[:effect].keys.include? :heal
+    if result[:effect].keys.include? :damage
+      amount = result[:effect][:damage][:amount] 
+      self.total_damage += amount
+      self.max_damage = amount if amount > self.max_damage
+    end
+
+    if result[:effect].keys.include? :heal
+      amount = result[:effect][:heal][:amount] 
+      self.total_healing += amount
+      self.max_healing = amount if amount > self.max_healing
+    end
+
   end
 end
