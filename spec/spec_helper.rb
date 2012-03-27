@@ -41,10 +41,8 @@ end
 # Todo: figure out how to make this work:
 # CombatLog.any_instance.stub(:file).and_return(File.new(logs_path.join('Ahri-vs-ForgeGuardian.txt')))
 
-# class CombatLog
-#   def file
-#     File.new(logs_path.join('Ahri-vs-ForgeGuardian.txt'))
-#   end
-
-#   def wait_for_copy; true; end
-# end
+class CombatLog
+  def file
+    File.new(logs_path.join('Ahri-vs-ForgeGuardian.txt'))
+  end
+end

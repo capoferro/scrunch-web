@@ -12,7 +12,8 @@ describe CombatLog do
     end
   end
 
-  it 'should parse the sources out of the combat log and create new source objects' do
+  it '#crunch should parse the sources out of the combat log and create new source objects' do
+    subject.crunch
     ents = subject.entities
     ents.size.should == 3
     ents.each do |entity|
