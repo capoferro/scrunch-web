@@ -1,0 +1,23 @@
+%p#notice= notice
+
+%p
+  %b Filename:
+  = @combat_log.file_name
+
+%table.entities.damage
+  %tr
+    %th
+      Entity
+    %th
+      Total Damage
+  = render partial: 'entity_row', collection: @combat_log.entities.sort_by(&:total_damage).reverse, locals: {type: :damage}
+
+%table.entities.healing
+  %tr
+    %th
+      Entity
+    %th
+      Total Healing
+  = render partial: 'entity_row', collection: @combat_log.entities.sort_by(&:total_healing).reverse, locals: {type: :healing}
+
+= link_to 'Back', combat_logs_path

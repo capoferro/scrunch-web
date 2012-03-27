@@ -1,0 +1,9 @@
+%tr.entity_row
+  %td= entity_row.name
+  - case type
+  - when :damage
+    %td= entity_row.total_damage
+  - when :healing
+    %td= entity_row.total_healing
+
+

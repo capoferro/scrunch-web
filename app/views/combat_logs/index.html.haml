@@ -1,0 +1,13 @@
+%h1 Listing combat_logs
+
+%table
+  %tr
+    %th Filename
+
+  - @combat_logs.each do |combat_log|
+    %tr
+      %td= link_to combat_log.file_name, combat_log
+
+%br
+
+= link_to 'New Combat log', new_combat_log_path

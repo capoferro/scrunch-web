@@ -1,0 +1,12 @@
+= form_for @combat_log do |f|
+  -if @combat_log.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@combat_log.errors.count, "error")} prohibited this combat_log from being saved:"
+      %ul
+        - @combat_log.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.file_field :file
+  .actions
+    = f.submit 'Upload'
