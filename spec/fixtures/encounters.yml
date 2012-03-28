@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  combat_log_id: 1
+  start_time: 2012-03-27 21:19:20
+  end_time: 2012-03-27 21:19:20
+
+two:
+  combat_log_id: 1
+  start_time: 2012-03-27 21:19:20
+  end_time: 2012-03-27 21:19:20

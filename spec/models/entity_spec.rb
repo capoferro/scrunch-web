@@ -37,14 +37,14 @@ describe Entity do
 
   describe '#add_effect_result' do
     it 'should increment damage when a damage effect result is provided' do
-      subject.add_effect_result 'adamage', effect: {damage: {amount: 4, type: 'energy'}}
-      subject.add_effect_result 'adamage', effect: {damage: {amount: 6, type: 'energy'}}
+      subject.add_effect_result 'adamage', type: 'ApplyEffect', detail: {concrete_type: 'Damage', amount: 4, type: 'energy'}
+      subject.add_effect_result 'adamage', type: 'ApplyEffect', detail: {concrete_type: 'Damage', amount: 6, type: 'energy'}
       subject.total_damage.should == 10
       subject.max_damage.should == {skill: 'adamage', amount: 6}
     end
     it 'should increment healing when a heal effect result is provided' do
-      subject.add_effect_result 'aheal', effect: {heal: {amount: 3, type: 'energy'}}
-      subject.add_effect_result 'aheal', effect: {heal: {amount: 7, type: 'energy'}}
+      subject.add_effect_result 'aheal', type: 'ApplyEffect', detail: {concrete_type: 'Heal', amount: 3, type: 'energy'}
+      subject.add_effect_result 'aheal', type: 'ApplyEffect', detail: {concrete_type: 'Heal', amount: 7, type: 'energy'}
       subject.total_healing.should == 10
       subject.max_healing.should == {skill: 'aheal', amount: 7}
     end

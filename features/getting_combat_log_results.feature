@@ -3,10 +3,12 @@ Feature: getting combat log results for my combat log
   In order to see how my in game combat performance is in chart format
   I want to be able to upload a combat log
 
+  @wip
   Scenario: Uploading a combat log file
     Given I am on the home page
     When I upload the combat log "Ahri-vs-ForgeGuardian"
     Then I should see the results of that combat log in chart format
+    And I should see tabs for each encounter parsed from "Ahri-vs-ForgeGuardian"
 
   @pending
   Scenario: Uploading a malformed combat log

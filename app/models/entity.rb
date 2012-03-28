@@ -1,6 +1,6 @@
 class Entity < ActiveRecord::Base
 
-  belongs_to :combat_log
+  belongs_to :encounter
 
   before_create :catch_blank_entity, :specify_player_or_npc
 
@@ -27,21 +27,22 @@ class Entity < ActiveRecord::Base
   def npc?; not self.player; end
 
   # Public: Takes in parsed results and adds to the appropriate metrics
+  #
+  # Returns nothing
   def add_effect_result(skill, result)
     self.total_damage  ||= 0
     self.total_healing ||= 0
 
-    if result[:effect].keys.include? :damage
-      amount = result[:effect][:damage][:amount] 
+    case result[:detail][:concrete_type]
+    when 'Damage'
+      amount = result[:detail][:amount] 
       self.total_damage += amount
       self.max_damage = {skill: skill, amount: amount} if self.max_damage.empty? or amount > self.max_damage[:amount]
-    end
-
-    if result[:effect].keys.include? :heal
-      amount = result[:effect][:heal][:amount] 
+    when 'Heal'
+      amount = result[:detail][:amount] 
       self.total_healing += amount
       self.max_healing = {skill: skill, amount: amount} if self.max_healing.empty? or amount > self.max_healing[:amount]
     end
-
   end
+
 end

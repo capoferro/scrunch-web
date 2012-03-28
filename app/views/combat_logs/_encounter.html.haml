@@ -1,0 +1,19 @@
+%table.entities.damage
+  %tr
+    %th
+      Entity
+    %th
+      Total Damage
+    %th
+      Max Hit
+  = render partial: 'entity_row', collection: encounter.entities.sort_by(&:total_damage).reverse, locals: {type: :damage}
+
+%table.entities.healing
+  %tr
+    %th
+      Entity
+    %th
+      Total Healing
+    %th
+      Max Heal
+  = render partial: 'entity_row', collection: encounter.entities.sort_by(&:total_healing).reverse, locals: {type: :healing}

@@ -64,3 +64,21 @@ end
 Then /^I should see "([^\"]*)"$/ do |text|
   page.should have_content(text)
 end
+
+Then /^I should see tabs for each encounter parsed from "([^\"]*)"$/ do |combat_log|
+  case combat_log
+  when "Ahri-vs-ForgeGuardian"
+    within('.encounters') do
+      page.should have_content('Encounter 1')
+      page.should have_content('NPCs')
+      within('ul.npcs') do
+        page.should have_content('Forge Guardian')
+      end
+      page.should have_content('Players')
+      within('ul.players') do
+        page.should have_content('Ahri')
+        page.should have_content('Ahri:T7-O1')
+      end
+    end
+  
+end

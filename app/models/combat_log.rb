@@ -9,7 +9,7 @@ class CombatLog < ActiveRecord::Base
   def file_size; self.file_file_size; end;
   def file_name; self.file_file_name; end;
 
-  has_many :entities
+  has_many :encounters
 
   # Private: Crunch the log.  Note: Due to how paperclip handles files
   # (directories named for record ids), this cannot be done on a new
@@ -17,7 +17,7 @@ class CombatLog < ActiveRecord::Base
   # 
   # Returns nothing
   def crunch
-    self.entities = Cruncher.crunch(self.file.path).values
+    self.encounters = Cruncher.crunch(self.file.path)
   end
   
   module Cruncher
@@ -26,23 +26,46 @@ class CombatLog < ActiveRecord::Base
       #
       # Returns a Hash of entities     
       def crunch filename
-        entities = {}
+        encounter_hashes = []
+        last_timestamp = nil
+
         File.open filename do |log|
           while line = log.gets
-            entity_name, skill, result = parse line
-            entities[entity_name] ||= Entity.new(name: entity_name)
-            entities[entity_name].add_effect_result skill, parse_effect_result(result)
+            timestamp, entity_name, skill, result = parse line
+            effect_result = parse_effect_result result
+
+            last_timestamp = timestamp
+
+            if effect_result[:detail][:concrete_type] == 'EnterCombat'
+              encounter_hashes << {}
+              encounter_hashes.last[:_start_time] = timestamp
+            elsif effect_result[:detail][:concrete_type] == 'ExitCombat'
+              encounter_hashes.last[:_end_time] = last_exit_timestamp = timestamp
+            elsif encounter_hashes.last
+              encounter_hashes.last[entity_name]  ||= Entity.new(name: entity_name)
+              encounter_hashes.last[entity_name].add_effect_result skill, effect_result
+            else
+              # not currently in an encounter.
+            end
           end
         end
-        entities
+        encounters = encounter_hashes.collect do |hash|
+          e = Encounter.new(start_time: DateTime.strptime(hash.delete(:_start_time), '%m/%d/%Y %H:%M:%S'),
+                            end_time: DateTime.strptime((hash.delete(:_end_time) || last_timestamp), '%m/%d/%Y %H:%M:%S'))
+          e.entities = hash.values
+          e
+        end
+        encounters
       end
 
       # Public: Process an individual line and update entities accordingly
       def parse(line)
-        timestamp, entity_with_id, target, skill_with_id, result = line.split /\]\s\[/
+        # using line[1, -1] because the leading square bracket is not
+        # removed during the split.
+        timestamp, entity_with_id, target, skill_with_id, result = line[1..-1].split /\]\s\[/
         entity_name, _ = entity_with_id.split /\s\{/
         skill, _ = skill_with_id.split /\s\{/
-        [entity_name, skill, result]
+        [timestamp, entity_name, skill, result]
       rescue ArgumentError => e # Will trigger on the first split. Be
                                 # sure not to cause side effects
                                 # before this has a chance to trigger
@@ -62,10 +85,17 @@ class CombatLog < ActiveRecord::Base
       #
       # Returns a Hash of result details
       def parse_effect_result(line)
-        result_type, details = line.split /\]/
-        effect = /\s\{\d*\}\:\s(.+)\s\{/.match(result_type)[1].downcase.to_sym
-        amount, type, _ = /\((.*)\)/.match(details)[1].split /\s+/
-        {effect: {effect => {amount: amount.to_i, type: type}}}
+        result, details = line.split /\]/
+        result_type = /^([^\{]+)\s\{/.match(result)[1]
+        concrete_type = /\s\{\d*\}\:\s(.*)\s[\{\[]/.match(result)[1]
+        parsed_details = if ['Damage', 'Heal'].include? concrete_type
+                           amount, effect_type, _ = /\((.*)\)/.match(details)[1].split /\s+/
+                           {concrete_type: concrete_type, amount: amount.to_i, type: effect_type}
+                         else
+                           {concrete_type: concrete_type}
+                         end
+
+        {type: result_type, detail: parsed_details}
       end
     end
   end
