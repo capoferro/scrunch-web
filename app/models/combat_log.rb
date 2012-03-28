@@ -90,7 +90,7 @@ class CombatLog < ActiveRecord::Base
         concrete_type = /\s\{\d*\}\:\s(.*)\s[\{\[]/.match(result)[1]
         parsed_details = if ['Damage', 'Heal'].include? concrete_type
                            amount, effect_type, _ = /\((.*)\)/.match(details)[1].split /\s+/
-                           {concrete_type: concrete_type, amount: amount.to_i, type: effect_type}
+                           {concrete_type: concrete_type, amount: amount.to_i, type: effect_type, critical: !!(amount =~ /\*/)}
                          else
                            {concrete_type: concrete_type}
                          end

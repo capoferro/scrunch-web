@@ -61,6 +61,12 @@ describe CombatLog::Cruncher do
     end
 
     describe 'a combat end line' do
+      before { @exit_combat_line = "[03/18/2012 03:59:24] [@Ahri] [@Ahri] [] [Event {836045448945472}: ExitCombat {836045448945489}] ()" }
+      
+      it 'should recognize combat start' do
+        described_class.parse(@exit_combat_line).should == ['03/18/2012 03:59:24', '@Ahri', nil, 'Event {836045448945472}: ExitCombat {836045448945489}] ()']
+      end
+
     end
 
     describe 'a damage line' do
@@ -82,11 +88,15 @@ describe CombatLog::Cruncher do
   end
   describe '::parse_effect_result' do
     it 'should disregard bugged ApplyEffect results' do
-      described_class.parse_effect_result("ApplyEffect {836045448945477}:  {2775472291184640}] ()\r\n").should == {type: 'ApplyEffect', detail: {concrete_type: ''}}
+      described_class.parse_effect_result("ApplyEffect {836045448945477}:  {2775472291184640}] ()").should == {type: 'ApplyEffect', detail: {concrete_type: ''}}
+    end
+
+    it 'should parse crits the same way as noncrits with an extra flag to signify crit' do
+      described_class.parse_effect_result("ApplyEffect {836045448945477}: Heal {836045448945500}] (1684*) <716>").should == {type: 'ApplyEffect', detail: {concrete_type: 'Heal', amount: 1684, critical: true, type: nil}}
     end
 
     describe 'modifier result' do
-      before {@result = "ApplyEffect {836045448945477}: Accuracy Reduced [Tech] {2848396540903685}] ()\r\n"}
+      before {@result = "ApplyEffect {836045448945477}: Accuracy Reduced [Tech] {2848396540903685}] ()"}
 
       it 'should not explode' do
         -> {described_class.parse_effect_result @result}.should_not raise_error
@@ -99,7 +109,7 @@ describe CombatLog::Cruncher do
     end
 
     it 'should return a hash of the details of the result chunk' do
-      described_class.parse_effect_result(@result).should == {type: 'ApplyEffect', detail: {concrete_type: 'Damage', amount: 73, type: 'energy'}}
+      described_class.parse_effect_result(@result).should == {type: 'ApplyEffect', detail: {concrete_type: 'Damage', amount: 73, type: 'energy', critical: false}}
     end
     end
     describe "enter combat" do
