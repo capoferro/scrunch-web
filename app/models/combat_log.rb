@@ -41,7 +41,7 @@ class CombatLog < ActiveRecord::Base
               encounter_hashes.last[:_start_time] = timestamp
             elsif effect_result[:detail][:concrete_type] == 'ExitCombat'
               encounter_hashes.last[:_end_time] = last_exit_timestamp = timestamp
-            elsif encounter_hashes.last
+            elsif encounter_hashes.last and (encounter_hashes.last[:_end_time].nil? or encounter_hashes.last[:_end_time] == timestamp)
               encounter_hashes.last[entity_name]  ||= Entity.new(name: entity_name)
               encounter_hashes.last[entity_name].add_effect_result skill, effect_result
             else

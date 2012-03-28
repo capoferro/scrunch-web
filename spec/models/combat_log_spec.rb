@@ -41,7 +41,8 @@ describe CombatLog::Cruncher do
       (ahri = enc.entities.select { |e| e.name == '@Ahri' }.first).total_damage.should == 2825
       enc.entities.select { |e| e.name == '@Ahri:T7-O1' }.first.total_damage.should == 859
       enc.entities.select { |e| e.name == 'Forge Guardian'}.first.total_damage.should == 3122
-      ahri.total_healing.should == 815
+      ahri.total_healing.should == 392
+      ahri.max_healing.should == {skill: 'Minor Medpac', amount: 392}
       ahri.max_damage.should == {skill: 'Slash', amount: 193}
     end
 
