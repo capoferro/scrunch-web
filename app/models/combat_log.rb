@@ -11,7 +11,7 @@ class CombatLog < ActiveRecord::Base
 
   has_many :encounters
 
-  # Private: Crunch the log.  Note: Due to how paperclip handles files
+  # Public: Crunch the log.  Note: Due to how paperclip handles files
   # (directories named for record ids), this cannot be done on a new
   # record.
   # 
@@ -24,7 +24,7 @@ class CombatLog < ActiveRecord::Base
     class << self
       # Public: Primary processing loop. Reads in the file, building data structures for analysis and display
       #
-      # Returns a Hash of entities     
+      # Returns an Array of Encounter instances
       def crunch filename
         encounter_hashes = []
         last_timestamp = nil
@@ -39,6 +39,7 @@ class CombatLog < ActiveRecord::Base
             if effect_result[:detail][:concrete_type] == 'EnterCombat'
               encounter_hashes << {}
               encounter_hashes.last[:_start_time] = timestamp
+              encounter_hashes.last[:_owner] = encounter_hashes.last[entity_name] ||= Entity.new(name: entity_name)
             elsif effect_result[:detail][:concrete_type] == 'ExitCombat'
               encounter_hashes.last[:_end_time] = last_exit_timestamp = timestamp
             elsif encounter_hashes.last and (encounter_hashes.last[:_end_time].nil? or encounter_hashes.last[:_end_time] == timestamp)
@@ -51,7 +52,8 @@ class CombatLog < ActiveRecord::Base
         end
         encounters = encounter_hashes.collect do |hash|
           e = Encounter.new(start_time: DateTime.strptime(hash.delete(:_start_time), '%m/%d/%Y %H:%M:%S'),
-                            end_time: DateTime.strptime((hash.delete(:_end_time) || last_timestamp), '%m/%d/%Y %H:%M:%S'))
+                            end_time: DateTime.strptime((hash.delete(:_end_time) || last_timestamp), '%m/%d/%Y %H:%M:%S'),
+                            owner: hash.delete(:_owner))
           e.entities = hash.values
           e
         end
