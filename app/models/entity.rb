@@ -24,7 +24,8 @@ class Entity < ActiveRecord::Base
   end
 
   def player?; self.player; end
-  def npc?; not self.player; end
+  def mob?; not self.player; end
+  alias :npc? :mob?
 
   # Public: Takes in parsed results and adds to the appropriate metrics
   #
@@ -45,4 +46,18 @@ class Entity < ActiveRecord::Base
     end
   end
 
+  # Public: Calculates the amount of damage done relative to the total damage done in an encounter
+  #
+  # Returns Float
+  def percent_damage
+    self.class.percent_of self.total_damage, self.encounter.total_damage
+  end
+
+  def percent_healing
+    self.class.percent_of self.total_healing, self.encounter.total_healing
+  end
+
+  def self.percent_of a, b
+    100 * a.to_f / b.to_f
+  end
 end

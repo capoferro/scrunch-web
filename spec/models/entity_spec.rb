@@ -1,6 +1,37 @@
 require 'spec_helper'
 
 describe Entity do
+  it 'should treat #npc? and #mob? the same' do
+    e = Entity.new(name: '@Ahri')
+    e.npc?.should == e.mob?
+  end
+
+  describe '#percent_' do
+    describe 'damage' do
+      it 'should calculate percentage of total damage done for an encounter' do
+        mock_enc = mock(Encounter)
+        mock_enc.stub(:total_damage).and_return 1000
+        e = Entity.create
+        e.stub(:encounter).and_return mock_enc
+        e.stub(:total_damage).and_return 755
+
+        e.percent_damage.should == 75.5
+      end
+    end
+
+    describe 'healing' do 
+      it 'should calculate percentage of total healing done for an encounter' do
+        mock_enc = mock(Encounter)
+        mock_enc.stub(:total_healing).and_return 1000
+        e = Entity.create
+        e.stub(:encounter).and_return mock_enc
+        e.stub(:total_healing).and_return 755
+
+        e.percent_healing.should == 75.5
+      end     
+    end
+  end
+
   describe '::create' do
     describe 'should use the name *unknown* if the name is' do
       it 'not provided' do
