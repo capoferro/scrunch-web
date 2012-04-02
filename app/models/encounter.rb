@@ -4,29 +4,38 @@ class Encounter < ActiveRecord::Base
   has_many :entities
   has_one :owner, class_name: 'Entity'
 
-
-  def total_damage
-    self.class.total_of_attribute entities, :total_damage
+  def duration_in_seconds
+    duration.to_i
   end
 
-  def total_healing
-    self.class.total_of_attribute entities, :total_healing
+  def duration
+    self.end_time - self.start_time
   end
 
-  def total_mob_damage
-    self.class.total_of_attribute entities.select(&:mob?), :total_damage
+  def player_entities
+    entities.select(&:player?)
   end
 
-  def total_mob_healing
-    self.class.total_of_attribute entities.select(&:mob?), :total_healing
+  def mob_entities
+    entities.select(&:mob?)
   end
 
-  def total_player_damage
-    self.class.total_of_attribute entities.select(&:player?), :total_damage
+  def total_damage type=nil
+    ents = if type.nil?
+             self.entities
+           else
+             entities.select { |e| e.type == type }
+           end
+    self.class.total_of_attribute ents, :total_damage
   end
 
-  def total_player_healing
-    self.class.total_of_attribute entities.select(&:player?), :total_healing
+  def total_healing type=nil
+    ents = if type.nil?
+             self.entities
+           else
+             entities.select { |e| e.type == type }
+           end
+    self.class.total_of_attribute ents, :total_healing
   end
 
   def self.total_of_attribute collection, attribute

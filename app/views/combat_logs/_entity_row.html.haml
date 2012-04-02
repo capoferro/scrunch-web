@@ -1,13 +1,15 @@
 %tr{class: "#{entity_row.name.gsub(/[\s\:]/, '').underscore} entity_row"}
-  %td= entity_row.name
+  %td.name= entity_row.name
   - case type
   - when :damage
-    %td= entity_row.total_damage
     %td.max= "#{entity_row.max_damage[:skill]}#{entity_row.max_damage.empty? ? '' : ': ' }#{entity_row.max_damage[:amount]}"
+    %td.dps= entity_row.dps.truncate
+    %td= entity_row.total_damage
     %td.progress
-      .bar{style: "width: #{entity_row.percent_damage}%"}
+      .bar{style: "width: #{entity_row.percent_damage(entity_row.type)}%"}
   - when :healing
-    %td= entity_row.total_healing
     %td.max= "#{entity_row.max_healing[:skill]}#{entity_row.max_healing.empty? ? '' : ': ' }#{entity_row.max_healing[:amount]}"
+    %td= entity_row.hps.truncate
+    %td= entity_row.total_healing
     %td.progress
-      .bar{style: "width: #{entity_row.percent_healing}%"}
+      .bar{style: "width: #{entity_row.percent_healing(entity_row.type)}%"}

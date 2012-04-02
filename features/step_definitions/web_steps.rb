@@ -80,5 +80,6 @@ Then /^I should see tabs for each encounter parsed from "([^\"]*)"$/ do |combat_
         page.should have_content('Ahri:T7-O1')
       end
     end
-  
+    
+  end
 end

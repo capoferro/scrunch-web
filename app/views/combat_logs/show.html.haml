@@ -1,11 +1,11 @@
 .span12
   %h2= @combat_log.file_name
 #encounter-tabs.tabbable.tabs-left
-  .span3
+  .span1
     %ul.nav.nav-tabs
       - @combat_log.encounters.each_with_index do |encounter, i|
         %li{class: i.zero? ? 'active' : '' }
           %a{href: "#encounter-#{encounter.id}", :'data-toggle' => 'tab'}
             = i + 1
-  .span9.tab-content
+  .span11.tab-content
     = render partial: 'encounter', collection: @combat_log.encounters, locals: {first_id: (!@combat_log.encounters.empty? and @combat_log.encounters.first.id)}

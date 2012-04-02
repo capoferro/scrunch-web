@@ -14,7 +14,7 @@ class Entity < ActiveRecord::Base
   end
 
   def specify_player_or_npc
-    self.player = if self.name[0] =~ /@/
+    self.player = if self.name[0] == '@'
                     self.name.gsub! /@/, ''
                     true
                   else
@@ -23,9 +23,19 @@ class Entity < ActiveRecord::Base
     true # don't interrupt creation
   end
 
-  def player?; self.player; end
-  def mob?; not self.player; end
+  def player?
+    specify_player_or_npc if self.player.nil?
+    self.player
+  end
+
+  def mob?
+    not self.player?
+  end
   alias :npc? :mob?
+  
+  def type
+    self.player? ? :player : :mob
+  end
 
   # Public: Takes in parsed results and adds to the appropriate metrics
   #
@@ -48,16 +58,32 @@ class Entity < ActiveRecord::Base
 
   # Public: Calculates the amount of damage done relative to the total damage done in an encounter
   #
+  # compared_to_type - :player or :mob
+  #
   # Returns Float
-  def percent_damage
-    self.class.percent_of self.total_damage, self.encounter.total_damage
+  def percent_damage(compared_to_type=nil)
+    self.class.percent_of self.total_damage, self.encounter.total_damage(compared_to_type)
   end
 
-  def percent_healing
-    self.class.percent_of self.total_healing, self.encounter.total_healing
+  def percent_healing(compared_to_type=nil)
+    self.class.percent_of self.total_healing, self.encounter.total_healing(compared_to_type)
   end
 
   def self.percent_of a, b
     100 * a.to_f / b.to_f
+  end
+
+  # Public: calculates damage per second
+  #
+  # Retuns float
+  def dps
+    self.total_damage.to_f / self.encounter.duration_in_seconds
+  end
+
+  #Public: calculates healing per second
+  #
+  # Returns flaot
+  def hps
+    self.total_healing.to_f / self.encounter.duration_in_seconds
   end
 end
