@@ -39,6 +39,11 @@ describe Encounter do
     it 'should return a list of mob entities only' do
       @encounter.mob_entities.size.should == 3
     end
+    it 'should not return *unknown*' do
+      @encounter.entities << Entity.new(name: '*unknown*')
+      
+      @encounter.mob_entities.size.should == 3
+    end
   end
 
   describe '#total_damage' do

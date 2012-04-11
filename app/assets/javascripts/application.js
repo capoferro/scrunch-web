@@ -14,3 +14,15 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require_tree .
+
+
+function fit_content_to_window(){
+    $('.encounter-tabs').height($(window).height()-40);
+    $('.container').height($(window).height());
+}
+
+$(document).ready(fit_content_to_window);
+$(window).resize(fit_content_to_window);
+
+
+

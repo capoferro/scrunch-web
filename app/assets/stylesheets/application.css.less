@@ -13,17 +13,79 @@
  *= require_tree .
 */
 
+@import "variables";
+
+body {
+    color: @grayLight;
+}
+
+.container {
+    height: 100%;
+}
+
+.tab-pane {
+    display: none;
+}
+.tab-pane.active{
+    display: block;
+}
 
 table.entities {
     width: 100%;
+    th {
+        border-bottom: 1px solid @grayDark;
+        background: @grayDark
+    }
     th, td {
         width: 10%;
+        border-right: 1px solid @grayDark;
+        text-align: right;
+        padding: 3px;
     }
-    .name {
+    .max {
         width: 20%;
     }
-    td.progress {
-        width: 50%;
+    .name {
+        width: 15%;
+        text-align: left;
     }
+    td.progress {
+        width: 45%;
+        .bar {
+            text-align: left;
+            span {
+                padding-left: 10px;
+            }
+            span.dark {
+            }
+        }
+    }
+    
 }
 
+.encounters {
+    padding: 0px;
+}
+
+.encounter-tabs {
+    overflow: scroll;
+    height: 90%;
+    position: fixed;
+    .nav-tabs { margin-right: 0px; }
+}
+
+.entity-header {
+    border-bottom: @blue 2px solid;
+}
+
+.log-name {
+    position: fixed;
+}
+
+.log-name-spacer {
+    visibility: hidden;
+}
+
+.duration {
+    text-align: right
+}

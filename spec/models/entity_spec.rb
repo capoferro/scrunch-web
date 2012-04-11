@@ -42,6 +42,11 @@ describe Entity do
     @mob.npc?.should == @mob.mob?
   end
 
+  it 'should not count *unknown* as a mob' do
+    @mob.name = '*unknown*'
+    @mob.mob?.should be_false
+  end
+
   describe '#percent_' do
     describe 'damage' do
       it 'should calculate percentage of total damage done for an encounter' do

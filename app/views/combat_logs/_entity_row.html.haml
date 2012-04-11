@@ -3,13 +3,16 @@
   - case type
   - when :damage
     %td.max= "#{entity_row.max_damage[:skill]}#{entity_row.max_damage.empty? ? '' : ': ' }#{entity_row.max_damage[:amount]}"
-    %td.dps= entity_row.dps.truncate
-    %td= entity_row.total_damage
+    %td.dps= entity_row.dps == 0 ? '--' : "%.3f" % entity_row.dps
     %td.progress
       .bar{style: "width: #{entity_row.percent_damage(entity_row.type)}%"}
+        %span{class: class_for_light_or_dark_text_on_bar(entity_row.percent_damage(entity_row.type))}
+          = entity_row.total_damage unless entity_row.total_damage == 0
   - when :healing
     %td.max= "#{entity_row.max_healing[:skill]}#{entity_row.max_healing.empty? ? '' : ': ' }#{entity_row.max_healing[:amount]}"
-    %td= entity_row.hps.truncate
-    %td= entity_row.total_healing
+    %td= entity_row.hps == 0 ? '--' : "%.3f" % entity_row.hps 
+
     %td.progress
       .bar{style: "width: #{entity_row.percent_healing(entity_row.type)}%"}
+        %span{class: class_for_light_or_dark_text_on_bar(entity_row.percent_healing(entity_row.type)) }
+          = entity_row.total_healing unless entity_row.total_healing == 0

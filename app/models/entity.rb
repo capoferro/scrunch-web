@@ -29,7 +29,7 @@ class Entity < ActiveRecord::Base
   end
 
   def mob?
-    not self.player?
+    !(self.player? or self.name == UNKNOWN_NAME)
   end
   alias :npc? :mob?
   
@@ -70,6 +70,7 @@ class Entity < ActiveRecord::Base
   end
 
   def self.percent_of a, b
+    return 0 if b == 0
     100 * a.to_f / b.to_f
   end
 

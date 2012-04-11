@@ -1,57 +1,53 @@
 %div{id: "encounter-#{encounter.id}", class: "tab-pane #{first_id == encounter.id ? 'active' : ''}"}
+  %h2.duration
+    Duration:
+    = duration_in_words(encounter.duration)
 
-  %h4 Players
-
-  %table.entities.damage
-    %thead
-      %tr
-        %th.name
-          Entity
-        %th
-          Max Hit
-        %th
-          DPS
-        %th
-          Total Damage
-      = render partial: 'entity_row', collection: sorted_by_total_and_type(:total_damage, encounter.player_entities), locals: {type: :damage}
+  - unless encounter.player_entities.empty?
+    %h3.entity-header Players
   
-  %table.entities.healing
-    %thead
-      %tr
-        %th.name
-          Entity
-        %th
-          Max Heal
-        %th
-          HPS
-        %th
-          Total Healing
-      = render partial: 'entity_row', collection: sorted_by_total_and_type(:total_healing, encounter.player_entities), locals: {type: :healing}
-
-  %h4 Mobs
-
-  %table.entities.damage
-    %thead
-      %tr
-        %th.name
-          Entity
-        %th
-          Max Hit
-        %th
-          DPS
-        %th
-          Total Damage
-      = render partial: 'entity_row', collection: sorted_by_total_and_type(:total_damage, encounter.mob_entities), locals: {type: :damage}
+    %table.entities.damage
+      %thead
+        %tr
+          %th.name
+            Entity
+          %th
+            Max Hit
+          %th
+            DPS
+        = render partial: 'entity_row', collection: sorted_by_total_and_type(:total_damage, encounter.player_entities), locals: {type: :damage}
+    
+    %table.entities.healing
+      %thead
+        %tr
+          %th.name
+            Entity
+          %th
+            Max Heal
+          %th
+            HPS
+        = render partial: 'entity_row', collection: sorted_by_total_and_type(:total_healing, encounter.player_entities), locals: {type: :healing}
+  - unless encounter.mob_entities.empty?
+    %h3.entity-header Mobs
   
-  %table.entities.healing
-    %thead
-      %tr
-        %th.name
-          Entity
-        %th
-          Max Heal
-        %th
-          HPS
-        %th
-          Total Healing
-      = render partial: 'entity_row', collection: sorted_by_total_and_type(:total_healing, encounter.mob_entities), locals: {type: :healing}
+    %table.entities.damage
+      %thead
+        %tr
+          %th.name
+            Entity
+          %th.max
+            Max Hit
+          %th
+            DPS
+        = render partial: 'entity_row', collection: sorted_by_total_and_type(:total_damage, encounter.mob_entities), locals: {type: :damage}
+    
+    %table.entities.healing
+      %thead
+        %tr
+          %th.name
+            Entity
+          %th.max
+            Max Heal
+          %th
+            HPS
+        = render partial: 'entity_row', collection: sorted_by_total_and_type(:total_healing, encounter.mob_entities), locals: {type: :healing}
